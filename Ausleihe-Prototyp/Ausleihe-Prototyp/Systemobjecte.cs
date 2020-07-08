@@ -40,14 +40,14 @@ namespace Ausleihe_Prototyp
     {
         public Transponder Transponder;
         public Student Student;
-        public string Ausgelienam;
+        public string Ausgeliehenam;
         public bool abegegeben = false;
 
         public Ausleihe(Transponder _tr ,Student student , string datum)
         {
             Transponder = _tr;
             Student = student;
-            Ausgelienam = datum;
+            Ausgeliehenam = datum;
 
 
         }
