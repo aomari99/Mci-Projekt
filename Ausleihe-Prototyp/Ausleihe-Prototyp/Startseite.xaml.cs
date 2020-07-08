@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Perception.Spatial;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -45,9 +46,11 @@ namespace Ausleihe_Prototyp
             switch (page)
             {
                 case "info":
-                    contentFrame.Navigate(typeof(Impressum));
+                    //contentFrame.Navigate(typeof(Impressum));
                     break;
-
+                case "ausleihe":
+                    contentFrame.Navigate(typeof(NeueAusleihe));
+                    break;
             }
         }
     }

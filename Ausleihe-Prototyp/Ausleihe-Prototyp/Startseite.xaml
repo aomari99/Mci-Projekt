@@ -462,12 +462,12 @@
         <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" 
              RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" SelectionChanged="navigation_SelectionChanged"  RelativePanel.AlignLeftWithPanel="True" Margin="0,0,0,0" Width="auto" Height="auto"  IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausgeliehene Transponder" Tag="SamplePage1" >
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausgeliehene Transponder" Tag="ausgeliehene" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausleihe" Tag="SamplePage2" >
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausleihe" Tag="ausleihe" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE948;"/>
                     </NavigationViewItem.Icon>
