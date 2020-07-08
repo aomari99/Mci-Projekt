@@ -26,5 +26,10 @@ namespace Ausleihe_Prototyp
         {
             this.InitializeComponent();
         }
+
+        private void button_Login_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Info));
+        }
     }
 }
