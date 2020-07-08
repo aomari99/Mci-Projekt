@@ -9,7 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Rectangle HorizontalAlignment="Left" Height="814" Stroke="Black" VerticalAlignment="Top" Width="926" Fill="#FFDFE2EB" Margin="-10,10,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Bottom" Width="926" Fill="" Margin="-10,0,0,688"/>
-        <TextBox HorizontalAlignment="Left" Height="44" Margin="140,188,0,0" Text="Matrikelnummer" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" TextChanged="TextBox_TextChanged" />
+        <Rectangle HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Bottom" Width="926" Margin="-10,0,0,688" Fill="DarkBlue"/>
+        <TextBox HorizontalAlignment="Left" Height="46" Margin="100,188,0,0" Text="Matrikelnummer" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" TextChanged="TextBox_TextChanged" />
+        <TextBlock HorizontalAlignment="Left" Height="46" Margin="231,262,0,0" Text="Vorname (automatisch ausgefüllt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" />
+        <TextBlock HorizontalAlignment="Left" Height="46" Margin="231,318,0,0" Text="Name (automatisch ausgefüllt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" />
     </Grid>
 </Page>
