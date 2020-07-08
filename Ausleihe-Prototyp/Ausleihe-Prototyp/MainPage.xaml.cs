@@ -27,9 +27,9 @@ namespace Ausleihe_Prototyp
             this.InitializeComponent();
         }
 
-        private void textBox_username_TextChanged(object sender, TextChangedEventArgs e)
+        private void button_Login_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Info));
         }
     }
 }
