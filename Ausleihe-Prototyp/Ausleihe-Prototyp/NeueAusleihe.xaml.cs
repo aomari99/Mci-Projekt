@@ -20,16 +20,40 @@ namespace Ausleihe_Prototyp
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class NeueAusleihe : Page
     {
-        public BlankPage1()
+        public NeueAusleihe()
         {
             this.InitializeComponent();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // 
+        }
 
+        
+
+        private void button_hinzu_click(object sender, RoutedEventArgs e)
+        {
+            if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
+            
+            // Pop-Up anzeigen lassen
+            // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
+            // Sperren des Transponders von 
+        }
+
+        private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
+        {
+            // Wenn Matrikelnummer im System
+            // Anzeigen von vorname und name in box_varname und box_name
+            // Ansonsten gib Text in Rot aus und rotes ausrufezeichen daneben
+        }
+
+        private void raum_eingetragen(UIElement sender, LosingFocusEventArgs args)
+        {
+            // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
+            // Anzeigen von passendem Transponder in box_transponder
         }
     }
 }
