@@ -49,6 +49,10 @@ namespace Ausleihe_Prototyp
             Ausleihe a10 = new Ausleihe(t10, student8, "10.07.2020");
         }
 
+        public static void addAusleihe(Transponder _tr, Student student, string datum)
+        {
+            Ausleihen.Add(new Ausleihe(_tr, student, datum)) ;
+        }
 
    
     }
