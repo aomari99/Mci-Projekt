@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,8 +25,14 @@ namespace Ausleihe_Prototyp
     {
         public NeueAusleihe()
         {
-            this.InitializeComponent();
+            try { this.InitializeComponent(); }
+            catch { // 
+                
+            }
+            
         }
+
+        // string unterschrift;
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -33,7 +40,7 @@ namespace Ausleihe_Prototyp
         }
 
         
-
+        /*
         private void button_hinzu_click(object sender, RoutedEventArgs e)
         {
             if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
@@ -42,6 +49,7 @@ namespace Ausleihe_Prototyp
             // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
             // Sperren des Transponders von 
         }
+        */
 
         private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
         {
@@ -54,6 +62,68 @@ namespace Ausleihe_Prototyp
         {
             // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
             // Anzeigen von passendem Transponder in box_transponder
+        }
+
+        private void Button_Click_Ja(object sender, RoutedEventArgs e)
+        {
+            /*
+            if (unterschrift == null) { 
+                // Gib Fehlermeldung aus            
+            }
+            */
+        }
+
+        private void Button_Click_Nein(object sender, RoutedEventArgs e)
+        {
+            // Lade die Seite neu und leere alle eingetragenen Daten
+        }
+
+        private async void DisplayLocationPromptDialog()
+        {
+            ContentDialog locationPromptDialog = new ContentDialog
+            {
+                Title = "Sind Sie sich Sicher?",
+                Content = "Kontrolieren Sie das die Person auf dem Ausweiß gleich der Person vor Ihnen ist ?",
+                CloseButtonText = "Nein",
+                PrimaryButtonText = "Ja",
+                Background = GetSolidColorBrush("#FF39428C")
+              
+
+
+
+            };
+
+           
+            var result = await locationPromptDialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+               
+            }
+            else 
+            {
+             
+            }
+  
+        }
+        public SolidColorBrush GetSolidColorBrush(string hex)
+        {
+            hex = hex.Replace("#", string.Empty);
+            byte a = (byte)(Convert.ToUInt32(hex.Substring(0, 2), 16));
+            byte r = (byte)(Convert.ToUInt32(hex.Substring(2, 2), 16));
+            byte g = (byte)(Convert.ToUInt32(hex.Substring(4, 2), 16));
+            byte b = (byte)(Convert.ToUInt32(hex.Substring(6, 2), 16));
+            SolidColorBrush myBrush = new SolidColorBrush(Windows.UI.Color.FromArgb(a, r, g, b));
+            return myBrush;
+        }
+        private void unterschrift_einfügen(object sender, RoutedEventArgs e)
+        {
+             // unterschrift = "dummy";
+        }
+
+        private void button_hinzu_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayLocationPromptDialog();
         }
     }
 }

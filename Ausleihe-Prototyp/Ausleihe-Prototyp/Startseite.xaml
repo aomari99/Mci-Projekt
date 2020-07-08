@@ -447,16 +447,16 @@
             </Setter>
         </Style>
     </Page.Resources>
-   
-        
 
+
+    <Grid>
     <RelativePanel Height="auto" Width="auto" >
         <RelativePanel x:Name="Topmenu"  Background="#FF39428C"  RelativePanel.AlignLeftWithPanel="True"
              RelativePanel.AlignRightWithPanel="True">
-            <TextBlock x:Name="anwendung" Foreground="White" Text="Andwendung"  Margin="30,5,0,5" RelativePanel.AlignLeftWithPanel="True"  FontSize="28"/>
+            <TextBlock x:Name="anwendung" Foreground="White" Text="Andwendung"  Margin="30,5,0,5" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignRightWith="uhrzeit" FontSize="28"/>
             <TextBlock x:Name="uhrzeit" Foreground="White"  Text="Uhrzeit" FontSize="28" RelativePanel.AlignHorizontalCenterWithPanel="True"  Margin="0,5,50,5"  HorizontalAlignment="Center"/>
-            <Button x:Name="email"  Foreground="White" Margin="0,5,200,5" Content="Email"   RelativePanel.AlignRightWith="Warnung" />
-            <FontIcon x:Name="Warnung" Foreground="Yellow" RelativePanel.AlignRightWith="Logout" Margin="0,5,150,5"  FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BA;" Width="30" Height="30"/>
+            <Button x:Name="email"  Foreground="White"  Content="Email"  RelativePanel.AlignLeftWith="uhrzeit" Margin="200,5,0,5" RelativePanel.AlignRightWith="Warnung" />
+                <FontIcon x:Name="Warnung" Foreground="Yellow"  RelativePanel.AlignRightWith="Logout" Margin="0,5,200,5"  FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BA;" Width="30" Height="30"/>
             <Button x:Name="Logout" Foreground="White" RelativePanel.AlignRightWithPanel="True" Margin="0,5,50,5" Content="Logout"/>
         </RelativePanel>
         <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" 
@@ -478,19 +478,19 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
+                <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" Tag="info" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
-            <NavigationView.PaneFooter>
-                <StackPanel Orientation="Vertical">
+  
 
-                    <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" >
-                        <NavigationViewItem.Icon>
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                </StackPanel>
-            </NavigationView.PaneFooter>
-            <Frame x:Name="contentFrame" Margin="0,0,0,0"/>
+                    <Frame  x:Name="contentFrame"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="auto" Height="auto"  />
+          
+           
         </NavigationView>
 
     </RelativePanel>
+    </Grid>
 </Page>

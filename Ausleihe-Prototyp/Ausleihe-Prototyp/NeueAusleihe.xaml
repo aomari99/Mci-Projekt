@@ -6,25 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Rectangle x:Name="rect_1" HorizontalAlignment="Left" Height="815" Stroke="Black" VerticalAlignment="Center" Width="926" Fill="#FFDFE2EB" Margin="-10,0,0,0"/>
-        <Rectangle x:Name="rect_2" HorizontalAlignment="Left" Height="97" Stroke="Black" VerticalAlignment="Bottom" Width="926" Margin="-10,0,0,717" Fill="DarkBlue"/>
+        <Rectangle x:Name="rect_2" HorizontalAlignment="Left" Height="97" Stroke="Black" VerticalAlignment="Bottom" Width="926" Margin="-10,0,0,717" Fill="#FF39428C"/>
         <TextBox x:Name="box_matrikelnummer" HorizontalAlignment="Left" Height="46" Margin="100,184,0,0" Text="" PlaceholderText="Matrikelnummer" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" TextChanged="TextBox_TextChanged" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" BorderBrush="Black" LostFocus="matrikelnummer_eingetragen" />
         <TextBox x:Name="box_vorname" HorizontalAlignment="Left" Height="46" Margin="182,262,0,0" Text="" PlaceholderText="Vorname (automatisch ausgefüllt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="598" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" IsReadOnly="True" BorderBrush="Black" IsTabStop="False" />
         <TextBox x:Name="box_name" HorizontalAlignment="Left" Height="46" Margin="182,318,0,0" Text="" PlaceholderText="Name (automatisch ausgefüllt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="598" FocusVisualPrimaryBrush="#FFCFC7C7" Foreground="Black" FocusVisualSecondaryBrush="#99ED9E9E" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" IsReadOnly="True" BorderBrush="Black" IsTabStop="False" />
         <TextBox x:Name="box_raum" HorizontalAlignment="Left" Height="46" Margin="100,394,0,0" Text="" PlaceholderText="Raum" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" TextChanged="TextBox_TextChanged" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" BorderBrush="Black" LosingFocus="raum_eingetragen" />
         <TextBox x:Name="box_transponder" HorizontalAlignment="Left" Height="46" Margin="182,471,0,0" Text="" PlaceholderText="Transponder (automatisch gewählt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="598" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" BorderBrush="Black" IsTabStop="False" />
         <TextBox x:Name="box_unterschrift" HorizontalAlignment="Left" Height="100" Margin="100,552,0,0" Text="" PlaceholderText="Unterschrift (elektronische Signatur mittels Touchpad eingelesen)" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" TextChanged="TextBox_TextChanged" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" BorderBrush="Black" IsTabStop="False" IsReadOnly="True" />
-        <Button x:Name="button_hinzu" Content="Hinzufügen" Height="49" Margin="324,715,0,0" VerticalAlignment="Top" Width="281" FontSize="24" FontWeight="Normal" FontStyle="Normal" Background="#33090909" BorderThickness="2,2,2,2" BorderBrush="#FF2B2B2B" Click="button_hinzu_click"/>
-        <TextBox x:Name="box_ueberschrift" HorizontalAlignment="Left" Height="62" Margin="0,29,0,0" Text="Neue Ausleihe hinzufügen" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontWeight="Bold"/>
+        <Button x:Name="button_hinzu" Content="Hinzufügen" Height="49" Margin="324,715,0,0" VerticalAlignment="Top" Width="281" FontSize="24" FontWeight="Bold" FontStyle="Normal" Background="#33090909" BorderThickness="2,2,2,2" BorderBrush="#FF2B2B2B" Click="button_hinzu_Click">
+       
+
+        </Button>
+        <TextBox x:Name="box_ueberschrift" HorizontalAlignment="Left" Height="62" Margin="0,29,0,0" Text="Neue Ausleihe hinzufügen" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontWeight="Bold" IsReadOnly="True"/>
         <TextBox HorizontalAlignment="Left" Height="39" Margin="113,245,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
         <TextBox HorizontalAlignment="Left" Height="56" Margin="113,284,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
         <TextBox HorizontalAlignment="Left" Height="39" Margin="113,455,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
-        <Popup x:Name="PopUp1" Margin="0,245,0,213">
-            <TextBlock Text="Sind sie sich sicher, dass die Person, die diesen Transponder ausleiht nicht nur vorgibt diese Person zu sein?"></TextBlock>
-        </Popup>
+        
+        <Button Content="Unterschrift Dummy-Mäßig einfügen" Height="32" Margin="376,603,0,0" VerticalAlignment="Top" Width="178" FontSize="8" Click="unterschrift_einfügen"/>
 
     </Grid>
-    
+
 </Page>

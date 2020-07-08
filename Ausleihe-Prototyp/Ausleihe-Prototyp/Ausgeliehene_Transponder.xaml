@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="Ausleihe_Prototyp.Ausgeliehene_Transponder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ausleihe_Prototyp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
+
+    <Grid >
+        <controls:DataGrid x:Name="DataGridTransponder" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="Matrikel-Nr." Width="275" Binding="{Binding matrikelnr}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Name" Width="275"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Transponder-Nr." Width="275"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Raum" Width="275"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Ausgeliehen um" Width="275"></controls:DataGridTextColumn>
+                <controls:DataGridComboBoxColumn Header="Löschen" Width="*"></controls:DataGridComboBoxColumn>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+        
+        
+    </Grid>
+</Page>
