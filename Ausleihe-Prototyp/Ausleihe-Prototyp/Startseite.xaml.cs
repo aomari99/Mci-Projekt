@@ -22,12 +22,33 @@ namespace Ausleihe_Prototyp
     /// </summary>
     public sealed partial class Info : Page
     {
+        DispatcherTimer Timer = new DispatcherTimer();
         public Info()
         {
             this.InitializeComponent();
-            
+
+            Timer.Tick += Timer_Tick;
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+            navigation.SelectedItem = navigation.MenuItems[0];
         }
 
+        private void Timer_Tick(object sender, object e)
+        {
+            uhrzeit.Text = DateTime.Now.ToString("HH:mm");
+        }
 
+        private void navigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            string page = args.SelectedItemContainer.Tag.ToString();
+            anwendung.Text = page;
+            switch (page)
+            {
+                case "info":
+                    contentFrame.Navigate(typeof(Impressum));
+                    break;
+
+            }
+        }
     }
 }
