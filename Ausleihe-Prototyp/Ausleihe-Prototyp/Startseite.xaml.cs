@@ -30,6 +30,7 @@ namespace Ausleihe_Prototyp
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
+            navigation.SelectedItem = navigation.MenuItems[0];
         }
 
         private void Timer_Tick(object sender, object e)
@@ -37,6 +38,17 @@ namespace Ausleihe_Prototyp
             uhrzeit.Text = DateTime.Now.ToString("HH:mm");
         }
 
+        private void navigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            string page = args.SelectedItemContainer.Tag.ToString();
+            anwendung.Text = page;
+            switch (page)
+            {
+                case "info":
+                    contentFrame.Navigate(typeof(Impressum));
+                    break;
 
+            }
+        }
     }
 }

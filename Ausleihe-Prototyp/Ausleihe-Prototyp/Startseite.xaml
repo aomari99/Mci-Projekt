@@ -460,7 +460,7 @@
             <Button x:Name="Logout" Foreground="White" RelativePanel.AlignRightWithPanel="True" Margin="0,5,50,5" Content="Logout"/>
         </RelativePanel>
         <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" 
-             RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="0,0,0,0" Width="auto" Height="auto"  IsBackButtonVisible="Collapsed">
+             RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" SelectionChanged="navigation_SelectionChanged"  RelativePanel.AlignLeftWithPanel="True" Margin="0,0,0,0" Width="auto" Height="auto"  IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausgeliehene Transponder" Tag="SamplePage1" >
                     <NavigationViewItem.Icon>
