@@ -25,6 +25,7 @@ namespace Ausleihe_Prototyp
         public Info()
         {
             this.InitializeComponent();
+
         }
     }
 }

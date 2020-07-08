@@ -6,37 +6,43 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <NavigationView x:Name="navigation" IsSettingsVisible="False">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Ausgeliehene Transponder" Tag="SamplePage1" >
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem  Content="Ausleihe" Tag="SamplePage2" >
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE948;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem  Content="Transponder Liste" Tag="SamplePage3" >
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE71D;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-   
-        </NavigationView.MenuItems>
-        <NavigationView.PaneFooter>
-            <StackPanel Orientation="Vertical">
-
-                <NavigationViewItem  Content="Info" >
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
+    <RelativePanel >
+        <StackPanel x:Name="Topmenu" Orientation="Horizontal" Background="Blue" Width="1497">
+            <TextBlock Text="Andwendung" FontSize="28"/>
+            <TextBlock Text="Uhrzeit" FontSize="28"/>
+        </StackPanel>
+        <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" Margin="0,0,0,0" Width="auto" Height="auto">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Ausgeliehene Transponder" Tag="SamplePage1" >
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-            </StackPanel>
-        </NavigationView.PaneFooter>
-        <Frame x:Name="contentFrame"/>
-    </NavigationView>
+                <NavigationViewItem  Content="Ausleihe" Tag="SamplePage2" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE948;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem  Content="Transponder Liste" Tag="SamplePage3" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE71D;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+            </NavigationView.MenuItems>
+            <NavigationView.PaneFooter>
+                <StackPanel Orientation="Vertical">
+
+                    <NavigationViewItem  Content="Info" >
+                        <NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                </StackPanel>
+            </NavigationView.PaneFooter>
+            <Frame x:Name="contentFrame" Margin="0,0,0,0"/>
+        </NavigationView>
+
+    </RelativePanel>
 </Page>
