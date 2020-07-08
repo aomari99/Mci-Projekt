@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,9 +29,25 @@ namespace Ausleihe_Prototyp
             this.InitializeComponent();
         }
 
-        private void textBox_username_TextChanged(object sender, TextChangedEventArgs e)
+        private async void button_Login_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine(passwordBox_password.Password);
+            string pw = passwordBox_password.Password;
+            string user = textBox_username.Text;
+            if (pw == "12345" && user == "ogate"){
+                Frame.Navigate(typeof(Info));
+            }
+            else {
+                var message = new MessageDialog("Login fehlgeschlagen");
+                await message.ShowAsync();
+            }
+        }
 
+        private void passwordBox_password_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter) {
+                button_Login_Click(sender, e);
+            }
         }
     }
 }
