@@ -109,8 +109,9 @@ namespace Ausleihe_Prototyp
         }
         private void unterschrift_einfügen(object sender, RoutedEventArgs e)
         {
-             // unterschrift = "dummy";
-             // ändere Text in unterschrift zu [Unterschrift eingefügt]
+            // unterschrift = "dummy";
+            // ändere Text in unterschrift zu [Unterschrift eingefügt]
+            box_unterschrift.Text = "[Unterschrift eingefügt]";
         }
 
         private void button_hinzu_Click(object sender, RoutedEventArgs e)
