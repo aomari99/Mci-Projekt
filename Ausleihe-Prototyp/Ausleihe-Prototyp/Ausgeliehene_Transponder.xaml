@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
 
     <Grid >
-        <controls:DataGrid x:Name="DataGridTransponder" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
+        <controls:DataGrid x:Name="DataGridTransponder" HorizontalAlignment="Left" Margin="10,10,0,0" ItemsSource="{x:Bind nochda}" VerticalAlignment="Top">
             <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Matrikel-Nr." Width="275" Binding="{Binding matrikelnr}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Matrikel-Nr." Width="275" Binding="{Binding Student.Matrikelnummer}" ></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Name" Width="275"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Transponder-Nr." Width="275"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Raum" Width="275"></controls:DataGridTextColumn>
