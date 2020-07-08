@@ -26,12 +26,12 @@ namespace Ausleihe_Prototyp
     public class Transponder
     {
         public int Transpondernummer;
-        public List<string> Raum ;
+        public List<string> Raumliste ;
 
         public Transponder(int _tnr , List<string> raume)
         {
             Transpondernummer = _tnr;
-            Raum = raume;
+            Raumliste = raume;
         }
     }
     
