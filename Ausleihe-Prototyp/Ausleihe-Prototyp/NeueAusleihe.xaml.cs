@@ -24,8 +24,14 @@ namespace Ausleihe_Prototyp
     {
         public NeueAusleihe()
         {
-            this.InitializeComponent();
+            try { this.InitializeComponent(); }
+            catch { // 
+                
+            }
+            
         }
+
+        // string unterschrift;
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -59,12 +65,23 @@ namespace Ausleihe_Prototyp
 
         private void Button_Click_Ja(object sender, RoutedEventArgs e)
         {
-
+            /*
+            if (unterschrift == null) { 
+                // Gib Fehlermeldung aus            
+            }
+            */
         }
 
         private void Button_Click_Nein(object sender, RoutedEventArgs e)
         {
+            // Lade die Seite neu und leere alle eingetragenen Daten
+        }
 
+
+
+        private void unterschrift_einfügen(object sender, RoutedEventArgs e)
+        {
+             // unterschrift = "dummy";
         }
     }
 }
