@@ -478,17 +478,13 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
+                <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" Tag="info" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
-            <NavigationView.PaneFooter>
-                <StackPanel Orientation="Vertical">
-
-                    <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" >
-                        <NavigationViewItem.Icon>
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
-                        </NavigationViewItem.Icon>
-                    </NavigationViewItem>
-                </StackPanel>
-            </NavigationView.PaneFooter>
+ 
             <Frame x:Name="contentFrame" Margin="0,0,0,0"/>
         </NavigationView>
 

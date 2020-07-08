@@ -42,11 +42,11 @@ namespace Ausleihe_Prototyp
         private void navigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             string page = args.SelectedItemContainer.Tag.ToString();
-            anwendung.Text = page;
+            anwendung.Text = args.SelectedItemContainer.Content.ToString();
             switch (page)
             {
                 case "info":
-                    //contentFrame.Navigate(typeof(Impressum));
+                    contentFrame.Navigate(typeof(Impressum));
                     break;
                 case "ausleihe":
                     contentFrame.Navigate(typeof(NeueAusleihe));
