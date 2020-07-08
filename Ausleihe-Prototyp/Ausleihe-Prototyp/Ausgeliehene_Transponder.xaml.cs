@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.UI.Controls;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,21 +27,67 @@ namespace Ausleihe_Prototyp
     {
 
         List<Ausleihe> nochda = new List<Ausleihe>();
+
+        List<Ausleihe> datamangerlocal  = Datamanger.Ausleihen;
+
+
+        private ObservableCollection<Ausleihe> Items;
         public Ausgeliehene_Transponder()
         {
-            this.InitializeComponent();
+
            
-          foreach( var x in Datamanger.Ausleihen)
+        
+
+            this.InitializeComponent();
+
+
+
+            DataTable dt = GetDataTable();
+           
+            FillDataGrid(dt, MyDataGrid);
+        }
+
+        private static DataTable GetDataTable()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Vorname", typeof(string));
+            dt.Columns.Add("Nachname", typeof(string));
+            dt.Columns.Add("Matrikelnummer", typeof(string));
+            dt.Columns.Add("Transpondernummer", typeof(int));
+            dt.Columns.Add("Ausgeliehen am", typeof(string));
+
+            foreach (var x in Datamanger.Ausleihen)
             {
                 if (x.abegegeben == false)
-                    nochda.Add(x);
+                    dt.Rows.Add(x.Student.Vorname ,x.Student.Nachname , x.Student.Matrikelnummer , x.Transponder.Transpondernummer , x.Ausgeliehenam);
             }
-      
+            return dt;
         }
 
 
 
 
-   
+        public static void FillDataGrid(DataTable table, DataGrid grid)
+        {
+            grid.Columns.Clear();
+            grid.AutoGenerateColumns = false;
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                grid.Columns.Add(new DataGridTextColumn()
+                {
+                    Header = table.Columns[i].ColumnName,
+                    Binding = new Binding { Path = new PropertyPath("[" + i.ToString() + "]") }
+                });
+            }
+
+            var collection = new ObservableCollection<object>();
+            foreach (DataRow row in table.Rows)
+            {
+                collection.Add(row.ItemArray);
+            }
+
+            grid.ItemsSource = collection;
+        }
     }
 }

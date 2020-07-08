@@ -66,6 +66,10 @@ namespace Ausleihe_Prototyp
                     // Wenn der Navigationsstapel nicht wiederhergestellt wird, zur ersten Seite navigieren
                     // und die neue Seite konfigurieren, indem die erforderlichen Informationen als Navigationsparameter
                     // übergeben werden
+
+                    Datamanger.init();
+
+
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Sicherstellen, dass das aktuelle Fenster aktiv ist

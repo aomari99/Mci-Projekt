@@ -8,18 +8,60 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
 
-    <Grid >
-        <controls:DataGrid x:Name="DataGridTransponder" HorizontalAlignment="Left" Margin="10,10,0,0" ItemsSource="{x:Bind nochda}" VerticalAlignment="Top">
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Matrikel-Nr." Width="275" Binding="{Binding Student.Matrikelnummer}" ></controls:DataGridTextColumn>
-                <controls:DataGridTextColumn Header="Name" Width="275"></controls:DataGridTextColumn>
-                <controls:DataGridTextColumn Header="Transponder-Nr." Width="275"></controls:DataGridTextColumn>
-                <controls:DataGridTextColumn Header="Raum" Width="275"></controls:DataGridTextColumn>
-                <controls:DataGridTextColumn Header="Ausgeliehen um" Width="275"></controls:DataGridTextColumn>
-                <controls:DataGridComboBoxColumn Header="Löschen" Width="*"></controls:DataGridComboBoxColumn>
-            </controls:DataGrid.Columns>
+    <RelativePanel>
+
+
+        <RelativePanel x:Name="panel0">
+            <TextBlock x:Name="Title" RelativePanel.AlignTopWithPanel="True" Margin="20" Style="{ThemeResource SubtitleTextBlockStyle}" Text="Liste der Ausgeliehene Transponder:" />
+
+            
+            <AppBarButton x:Name="Filter" RelativePanel.RightOf="Title" Margin="0,10,0,10"  Icon="Filter" Label="Filter">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="rankLow" Text="Ausgeliehen am aufsteigend" />
+                        <MenuFlyoutItem x:Name="rankHigh" Text="Ausgeliehen am absteigend" />
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem x:Name="heightLow" Text="Name  A-Z" />
+                        <MenuFlyoutItem x:Name="heightHigh" Text="Name  Z-A" />
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem x:Name="clearFilter" Text="Remove Filter" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+           
+
+
+
+
+
+        </RelativePanel>
+    
+        <controls:DataGrid RelativePanel.Below="panel0"
+    x:Name="MyDataGrid"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    AlternatingRowBackground="Transparent"
+    AlternatingRowForeground="Gray"
+    AreRowDetailsFrozen="False"
+    AreRowGroupHeadersFrozen="True"
+    AutoGenerateColumns="False"
+    CanUserReorderColumns="True"
+    CanUserResizeColumns="True"
+    CanUserSortColumns="False"
+    ColumnHeaderHeight="32"
+    FrozenColumnCount="0"
+    GridLinesVisibility="None"
+    HeadersVisibility="Column"
+    HorizontalScrollBarVisibility="Visible"
+    IsReadOnly="False"
+    
+    MaxColumnWidth="400"
+    RowDetailsVisibilityMode="Collapsed"
+    RowGroupHeaderPropertyNameAlternative="Range"
+    SelectionMode="Extended"
+    VerticalScrollBarVisibility="Visible"
+    >
+          
         </controls:DataGrid>
-        
-        
-    </Grid>
+    </RelativePanel>
 </Page>
