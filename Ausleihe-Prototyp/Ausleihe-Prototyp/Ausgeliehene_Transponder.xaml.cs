@@ -25,27 +25,14 @@ namespace Ausleihe_Prototyp
         public Ausgeliehene_Transponder()
         {
             this.InitializeComponent();
-            ausleihe_info testausleihe = new ausleihe_info();
-
-            testausleihe.matrikelnr = 12345;
-            testausleihe.name = "Testname";
-            testausleihe.transpondernr = 987654321;
-            testausleihe.raumnr = 31;
-            testausleihe.ausgeliehenam = "01.01.2020";
-
-            DataGridTransponder.Items.Add(testausleihe);
+           
+          
+      
         }
 
 
 
 
-        public class ausleihe_info
-        {
-            public int matrikelnr { get; set; }
-            public string name { get; set; }
-            public int transpondernr { get; set; }
-            public int raumnr { get; set; }
-            public string ausgeliehenam { get; set; }
-        }
+   
     }
 }

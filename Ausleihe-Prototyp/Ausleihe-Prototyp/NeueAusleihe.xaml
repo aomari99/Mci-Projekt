@@ -35,7 +35,7 @@
         <TextBox HorizontalAlignment="Left" Height="39" Margin="113,455,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
         <Popup x:Name="PopUp1" Margin="-10,245,0,213" IsOpen="False">
             <Grid>
-                <Rectangle Fill=""/>
+                <Rectangle Fill="Black"/>
                 <TextBlock Text="Sind sie sich sicher, dass die Person, die diesen Transponder ausleiht nicht nur vorgibt diese Person zu sein?" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button x:Name="button_ja" Content="Ja"/>
                 <Button x:Name="button_nein" Content="Nein"/>
