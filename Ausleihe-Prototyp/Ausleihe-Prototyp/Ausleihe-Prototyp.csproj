@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ausgeliehene_Transponder.xaml.cs">
+      <DependentUpon>Ausgeliehene_Transponder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Datamanger.cs" />
     <Compile Include="Impressum.xaml.cs">
       <DependentUpon>Impressum.xaml</DependentUpon>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Ausgeliehene_Transponder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Impressum.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
