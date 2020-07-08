@@ -29,6 +29,8 @@ namespace Ausleihe_Prototyp
             catch { // 
                 
             }
+
+            
             
         }
 
@@ -39,53 +41,51 @@ namespace Ausleihe_Prototyp
             // 
         }
 
-        
-        /*
-        private void button_hinzu_click(object sender, RoutedEventArgs e)
-        {
-            if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
-            
-            // Pop-Up anzeigen lassen
-            // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
-            // Sperren des Transponders von 
-        }
-        */
 
         private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
         {
+
+            if (box_matrikelnummer.Text != "")
+            {
+                box_vorname.Text = "Max";
+                box_name.Text = "Moschi";
+            }
+
             // Wenn Matrikelnummer im System
+            
             // Anzeigen von vorname und name in box_varname und box_name
             // Ansonsten gib Text in Rot aus und rotes ausrufezeichen daneben
         }
 
         private void raum_eingetragen(UIElement sender, LosingFocusEventArgs args)
         {
-            // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
-            // Anzeigen von passendem Transponder in box_transponder
-        }
-
-        private void Button_Click_Ja(object sender, RoutedEventArgs e)
-        {
             /*
-            if (unterschrift == null) { 
-                // Gib Fehlermeldung aus            
-            }
+             student studi1 = where student.matrikelnummer = matrikelnummer
+            
+             
+            Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
+            
+            get Transponder where Raum=raumnummer
+            // Anzeigen von passendem Transponder in box_transponder
             */
+            if (box_raum.Text != "")
+            {
+                box_transponder.Text = "2";
+            }
+            
+            
         }
 
-        private void Button_Click_Nein(object sender, RoutedEventArgs e)
-        {
-            // Lade die Seite neu und leere alle eingetragenen Daten
-        }
+       
 
         private async void DisplayLocationPromptDialog()
         {
             ContentDialog locationPromptDialog = new ContentDialog
             {
-                Title = "Sind Sie sich Sicher?",
-                Content = "Kontrolieren Sie das die Person auf dem Ausweiß gleich der Person vor Ihnen ist ?",
-                CloseButtonText = "Nein",
-                PrimaryButtonText = "Ja",
+                Title = "Sind Sie sich sicher?",
+                Content = "Kontrollieren Sie bitte, ob die Person auf dem Ausweis auch die Person ist, die den Transponder ausleiht!",
+                CloseButtonText = "Nein, das ist nicht die Person",
+                PrimaryButtonText = "Ja, das ist die Person",
                 Background = GetSolidColorBrush("#FF39428C")
               
 
@@ -98,11 +98,13 @@ namespace Ausleihe_Prototyp
 
             if (result == ContentDialogResult.Primary)
             {
-               
+                
+                // Speichere Daten
+                Frame.Navigate(typeof(NeueAusleihe));
             }
             else 
             {
-             
+                Frame.Navigate(typeof(NeueAusleihe));
             }
   
         }
@@ -118,12 +120,33 @@ namespace Ausleihe_Prototyp
         }
         private void unterschrift_einfügen(object sender, RoutedEventArgs e)
         {
-             // unterschrift = "dummy";
+            // unterschrift = "dummy";
+            // ändere Text in unterschrift zu [Unterschrift eingefügt]
+            box_unterschrift.Text = "[Unterschrift eingefügt]";
         }
 
         private void button_hinzu_Click(object sender, RoutedEventArgs e)
         {
-            DisplayLocationPromptDialog();
+            if (box_matrikelnummer.Text == "") { 
+                box_matrikelnummer.PlaceholderForeground = GetSolidColorBrush("FF960909");
+                box_matrikelnummer.PlaceholderText = "Bitte geben Sie eine Matrikelnummer ein";
+            }
+            
+            if (box_raum.Text == "")
+            {
+                box_raum.PlaceholderForeground = GetSolidColorBrush("FF960909");
+                box_raum.PlaceholderText = "Bitte geben Sie eine Raumnummer ein";
+            }
+
+            if (box_unterschrift.Text == "")
+            {
+                box_unterschrift.PlaceholderForeground = GetSolidColorBrush("FF960909");
+                box_unterschrift.PlaceholderText = "Bitte hinterlegen Sie eine Unterschrift";
+            }
+
+            if (box_raum.Text != "" && box_matrikelnummer.Text != "" && box_unterschrift.Text != "") {
+                DisplayLocationPromptDialog();
+            }
         }
     }
 }
