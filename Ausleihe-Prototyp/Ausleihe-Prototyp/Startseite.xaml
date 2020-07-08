@@ -7,12 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
-    <RelativePanel >
-        <StackPanel x:Name="Topmenu" Orientation="Horizontal" Background="Blue" Width="1497">
-            <TextBlock Text="Andwendung" FontSize="28"/>
-            <TextBlock Text="Uhrzeit" FontSize="28"/>
+    <RelativePanel Height="auto" Width="auto" >
+        <StackPanel x:Name="Topmenu" Orientation="Horizontal" Background="#FF39428C"  RelativePanel.AlignLeftWithPanel="True"
+             RelativePanel.AlignRightWithPanel="True">
+            <TextBlock Text="Andwendung"  Margin="50,5,400,5"  FontSize="28"/>
+            <TextBlock Text="Uhrzeit" FontSize="28"  Margin="0,5,50,5"  HorizontalAlignment="Center"/>
+            <Button x:Name="email" Margin="0,5,50,5" Content="Email" />
+            <FontIcon x:Name="Warnung" Margin="0,5,50,5"  FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BA;" Width="50"/>
+            <Button x:Name="Logout" Margin="0,5,50,5" Content="Logout"/>
         </StackPanel>
-        <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" Margin="0,0,0,0" Width="auto" Height="auto">
+        <NavigationView x:Name="navigation" IsSettingsVisible="False" RelativePanel.Below="Topmenu" 
+             RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="0,0,0,0" Width="auto" Height="auto" >
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Ausgeliehene Transponder" Tag="SamplePage1" >
                     <NavigationViewItem.Icon>
