@@ -33,7 +33,7 @@ namespace Ausleihe_Prototyp
         }
 
         
-
+        /*
         private void button_hinzu_click(object sender, RoutedEventArgs e)
         {
             if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
@@ -42,6 +42,7 @@ namespace Ausleihe_Prototyp
             // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
             // Sperren des Transponders von 
         }
+        */
 
         private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
         {
@@ -54,6 +55,16 @@ namespace Ausleihe_Prototyp
         {
             // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
             // Anzeigen von passendem Transponder in box_transponder
+        }
+
+        private void Button_Click_Ja(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Nein(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
