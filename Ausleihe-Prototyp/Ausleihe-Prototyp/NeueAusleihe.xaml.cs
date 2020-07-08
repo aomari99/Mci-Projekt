@@ -41,21 +41,12 @@ namespace Ausleihe_Prototyp
             // 
         }
 
-        
-        /*
-        private void button_hinzu_click(object sender, RoutedEventArgs e)
-        {
-            if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
-            
-            // Pop-Up anzeigen lassen
-            // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
-            // Sperren des Transponders von 
-        }
-        */
 
         private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
         {
             // Wenn Matrikelnummer im System
+            box_vorname.Text = "Max";
+            box_name.Text = "Moschi";
             // Anzeigen von vorname und name in box_varname und box_name
             // Ansonsten gib Text in Rot aus und rotes ausrufezeichen daneben
         }
@@ -76,19 +67,7 @@ namespace Ausleihe_Prototyp
             
         }
 
-        private void Button_Click_Ja(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (matrikelnummer != null && raumnummer != null && unterschrift != null) { 
-                Füge Ausleihe hinzu mit matrikelnummer, raumummer, unterschrift           
-            }
-            */
-        }
-
-        private void Button_Click_Nein(object sender, RoutedEventArgs e)
-        {
-            // Lade die Seite neu und leere alle eingetragenen Daten
-        }
+       
 
         private async void DisplayLocationPromptDialog()
         {
