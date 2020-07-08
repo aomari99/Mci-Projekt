@@ -8,7 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Rectangle HorizontalAlignment="Center" Height="715" Stroke="Black" VerticalAlignment="Center" Width="926" Fill="#FFDFE2EB"/>
-        <Rectangle HorizontalAlignment="Center" Height="162" Stroke="Black" VerticalAlignment="Top" Width="926" Fill="DarkSlateBlue"/>
+        <Rectangle HorizontalAlignment="Left" Height="814" Stroke="Black" VerticalAlignment="Top" Width="926" Fill="#FFDFE2EB" Margin="-10,10,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Bottom" Width="926" Fill="" Margin="-10,0,0,688"/>
+        <TextBox HorizontalAlignment="Left" Height="44" Margin="140,188,0,0" Text="Matrikelnummer" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" TextChanged="TextBox_TextChanged" />
     </Grid>
 </Page>
