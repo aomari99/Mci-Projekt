@@ -41,6 +41,13 @@ namespace Ausleihe_Prototyp
                 var message = new MessageDialog("Login fehlgeschlagen");
                 await message.ShowAsync();
             }
-        }   
+        }
+
+        private void passwordBox_password_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter) {
+                button_Login_Click(sender, e);
+            }
+        }
     }
 }

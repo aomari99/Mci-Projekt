@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Perception.Spatial;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,12 +23,35 @@ namespace Ausleihe_Prototyp
     /// </summary>
     public sealed partial class Info : Page
     {
+        DispatcherTimer Timer = new DispatcherTimer();
         public Info()
         {
             this.InitializeComponent();
-            
+
+            Timer.Tick += Timer_Tick;
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+            navigation.SelectedItem = navigation.MenuItems[0];
         }
 
+        private void Timer_Tick(object sender, object e)
+        {
+            uhrzeit.Text = DateTime.Now.ToString("HH:mm");
+        }
 
+        private void navigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            string page = args.SelectedItemContainer.Tag.ToString();
+            anwendung.Text = args.SelectedItemContainer.Content.ToString();
+            switch (page)
+            {
+                case "info":
+                    contentFrame.Navigate(typeof(Impressum));
+                    break;
+                case "ausleihe":
+                    contentFrame.Navigate(typeof(NeueAusleihe));
+                    break;
+            }
+        }
     }
 }
