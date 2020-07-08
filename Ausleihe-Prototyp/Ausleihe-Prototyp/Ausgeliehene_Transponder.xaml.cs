@@ -22,11 +22,17 @@ namespace Ausleihe_Prototyp
     /// </summary>
     public sealed partial class Ausgeliehene_Transponder : Page
     {
+
+        List<Ausleihe> nochda = new List<Ausleihe>();
         public Ausgeliehene_Transponder()
         {
             this.InitializeComponent();
            
-          
+          foreach( var x in Datamanger.Ausleihen)
+            {
+                if (x.abegegeben == false)
+                    nochda.Add(x);
+            }
       
         }
 
