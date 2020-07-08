@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Datamanger.cs" />
     <Compile Include="Impressum.xaml.cs">
       <DependentUpon>Impressum.xaml</DependentUpon>
     </Compile>
