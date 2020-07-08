@@ -51,6 +51,9 @@ namespace Ausleihe_Prototyp
                 case "ausleihe":
                     contentFrame.Navigate(typeof(NeueAusleihe));
                     break;
+                case "ausgeliehene":
+                    contentFrame.Navigate(typeof(Ausgeliehene_Transponder));
+                    break;
             }
         }
     }
