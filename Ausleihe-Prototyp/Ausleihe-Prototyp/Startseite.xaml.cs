@@ -22,10 +22,19 @@ namespace Ausleihe_Prototyp
     /// </summary>
     public sealed partial class Info : Page
     {
+        DispatcherTimer Timer = new DispatcherTimer();
         public Info()
         {
             this.InitializeComponent();
-            
+
+            Timer.Tick += Timer_Tick;
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            uhrzeit.Text = DateTime.Now.ToString("HH:mm");
         }
 
 
