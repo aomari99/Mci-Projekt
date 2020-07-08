@@ -137,9 +137,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Systemobjecte.cs" />
-    <Compile Include="TransponderListe.xaml.cs">
-      <DependentUpon>TransponderListe.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

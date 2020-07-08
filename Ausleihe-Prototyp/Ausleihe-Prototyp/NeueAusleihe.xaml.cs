@@ -29,6 +29,8 @@ namespace Ausleihe_Prototyp
             catch { // 
                 
             }
+
+            
             
         }
 
@@ -39,44 +41,33 @@ namespace Ausleihe_Prototyp
             // 
         }
 
-        
-        /*
-        private void button_hinzu_click(object sender, RoutedEventArgs e)
-        {
-            if (!PopUp1.IsOpen) { PopUp1.IsOpen = true; }
-            
-            // Pop-Up anzeigen lassen
-            // Hinzufuegen von Neuer Ausleihe in Aktuell-Ausgeliehene-Transponder
-            // Sperren des Transponders von 
-        }
-        */
 
         private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
         {
             // Wenn Matrikelnummer im System
+            box_vorname.Text = "Max";
+            box_name.Text = "Moschi";
             // Anzeigen von vorname und name in box_varname und box_name
             // Ansonsten gib Text in Rot aus und rotes ausrufezeichen daneben
         }
 
         private void raum_eingetragen(UIElement sender, LosingFocusEventArgs args)
         {
-            // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
-            // Anzeigen von passendem Transponder in box_transponder
-        }
-
-        private void Button_Click_Ja(object sender, RoutedEventArgs e)
-        {
             /*
-            if (unterschrift == null) { 
-                // Gib Fehlermeldung aus            
-            }
-            */
+             student studi1 = where student.matrikelnummer = matrikelnummer
+             
+            Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
+            
+            get Transponder where Raum=raumnummer
+            // Anzeigen von passendem Transponder in box_transponder
+
+
+
+             */
+            
         }
 
-        private void Button_Click_Nein(object sender, RoutedEventArgs e)
-        {
-            // Lade die Seite neu und leere alle eingetragenen Daten
-        }
+       
 
         private async void DisplayLocationPromptDialog()
         {
@@ -118,7 +109,9 @@ namespace Ausleihe_Prototyp
         }
         private void unterschrift_einfügen(object sender, RoutedEventArgs e)
         {
-             // unterschrift = "dummy";
+            // unterschrift = "dummy";
+            // ändere Text in unterschrift zu [Unterschrift eingefügt]
+            box_unterschrift.Text = "[Unterschrift eingefügt]";
         }
 
         private void button_hinzu_Click(object sender, RoutedEventArgs e)
