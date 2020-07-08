@@ -28,6 +28,8 @@ namespace Ausleihe_Prototyp
             catch { // 
                 
             }
+
+            
             
         }
 
@@ -59,15 +61,25 @@ namespace Ausleihe_Prototyp
 
         private void raum_eingetragen(UIElement sender, LosingFocusEventArgs args)
         {
-            // Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
+            /*
+             student studi1 = where student.matrikelnummer = matrikelnummer
+             
+            Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
+            
+            get Transponder where Raum=raumnummer
             // Anzeigen von passendem Transponder in box_transponder
+
+
+
+             */
+            
         }
 
         private void Button_Click_Ja(object sender, RoutedEventArgs e)
         {
             /*
-            if (unterschrift == null) { 
-                // Gib Fehlermeldung aus            
+            if (matrikelnummer != null && raumnummer != null && unterschrift != null) { 
+                Füge Ausleihe hinzu mit matrikelnummer, raumummer, unterschrift           
             }
             */
         }
@@ -82,6 +94,7 @@ namespace Ausleihe_Prototyp
         private void unterschrift_einfügen(object sender, RoutedEventArgs e)
         {
              // unterschrift = "dummy";
+             // ändere Text in unterschrift zu [Unterschrift eingefügt]
         }
     }
 }
