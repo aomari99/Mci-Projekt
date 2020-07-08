@@ -26,10 +26,5 @@ namespace Ausleihe_Prototyp
         {
             this.InitializeComponent();
         }
-
-        private void textBox_username_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
