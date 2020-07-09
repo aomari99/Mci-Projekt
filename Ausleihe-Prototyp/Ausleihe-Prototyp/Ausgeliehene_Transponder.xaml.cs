@@ -227,49 +227,54 @@ namespace Ausleihe_Prototyp
 
         private void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            suggestion.Clear();
-            switch (combo.SelectedValue.ToString())
+
+            if (combo.SelectedIndex != -1)
             {
-                case "Nachname":
-                    foreach ( var x in collection)
-                    {
-                        suggestion.Add(x.Nachname);
-                    }
-                    break;
+                suggestion.Clear();
+                suchebox.IsEnabled = true;
+                switch (combo.SelectedValue.ToString())
+                {
+                    case "Nachname":
+                        foreach (var x in collection)
+                        {
+                            suggestion.Add(x.Nachname);
+                        }
+                        break;
 
-                case "Vorname":
-                    foreach (var x in collection)
-                    {
-                        suggestion.Add(x.Vorname);
-                    }
-                    break;
+                    case "Vorname":
+                        foreach (var x in collection)
+                        {
+                            suggestion.Add(x.Vorname);
+                        }
+                        break;
 
-                case "Matrikelnummer":
-                    foreach (var x in collection)
-                    {
-                        suggestion.Add(x.Matrikelnummer);
-                    }
-                    break;
+                    case "Matrikelnummer":
+                        foreach (var x in collection)
+                        {
+                            suggestion.Add(x.Matrikelnummer);
+                        }
+                        break;
 
 
-                case "Transpondernummer":
-                    foreach (var x in collection)
-                    {
-                        suggestion.Add(x.Transpondernummer.ToString());
-                    }
-                    break;
+                    case "Transpondernummer":
+                        foreach (var x in collection)
+                        {
+                            suggestion.Add(x.Transpondernummer.ToString());
+                        }
+                        break;
 
-                case "Ausgeliehen um":
-                    foreach (var x in collection)
-                    {
-                        suggestion.Add(x.Ausgeliehenam);
-                    }
-                    break;
-            }
-            filtersuggestion.Clear();
-            foreach ( var x in suggestion)
-            {
-                filtersuggestion.Add(x);
+                    case "Ausgeliehen um":
+                        foreach (var x in collection)
+                        {
+                            suggestion.Add(x.Ausgeliehenam);
+                        }
+                        break;
+                }
+                filtersuggestion.Clear();
+                foreach (var x in suggestion)
+                {
+                    filtersuggestion.Add(x);
+                }
             }
         }
 
@@ -294,7 +299,56 @@ namespace Ausleihe_Prototyp
             }
             else
             {
-               
+                collection.Clear();
+                foreach (var y in Datamanger.Ausleihen)
+                {
+                    if (y.abegegeben == false )
+                    {
+
+                        switch (combo.SelectedValue.ToString())
+                        {
+                            case "Nachname":
+                                if (y.Student.Nachname == suchebox.Text)
+                                {
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                }
+                                break;
+
+                            case "Vorname":
+                                if (y.Student.Vorname == suchebox.Text)
+                                {
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                }
+                                break;
+
+                            case "Matrikelnummer":
+                                if (y.Student.Matrikelnummer == suchebox.Text)
+                                {
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                }
+                                break;
+
+
+                            case "Transpondernummer":
+                                if (y.Transponder.Transpondernummer.ToString() == suchebox.Text)
+                                {
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                }
+                                break;
+
+                            case "Ausgeliehen um":
+                                if (y.Ausgeliehenam == suchebox.Text)
+                                {
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                }
+                                break;
+                        }
+
+                      
+                    }
+                }
+
+                MyDataGrid.SelectedItem = null;
             }
            
         }
@@ -302,6 +356,27 @@ namespace Ausleihe_Prototyp
         private void suchebox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
           //  Debug.WriteLine("Hello world");
+        }
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            suchebox.Text = "";
+            
+            collection.Clear();
+            combo.SelectedIndex = -1;
+            suchebox.IsEnabled = false;
+            foreach (var x in Datamanger.Ausleihen)
+            {
+                if (x.abegegeben == false)
+                {
+
+
+
+                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
+                }
+            }
+
+            MyDataGrid.SelectedItem = null;
         }
     }
 }

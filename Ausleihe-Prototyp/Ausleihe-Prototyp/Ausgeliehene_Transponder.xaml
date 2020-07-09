@@ -182,18 +182,18 @@
             <TextBlock x:Name="Title" RelativePanel.AlignTopWithPanel="True" Margin="20" Style="{ThemeResource SubtitleTextBlockStyle}" Text="Liste der Ausgeliehene Transponder:"  RelativePanel.AlignLeftWithPanel="True"/>
             
             
-            <AutoSuggestBox x:Name="suchebox" TextChanged="suchebox_TextChanged"  QuerySubmitted="suchebox_QuerySubmitted" SuggestionChosen="suchebox_SuggestionChosen"  Header="Suche:" QueryIcon="Find"   Width="200" RelativePanel.RightOf="Title" >
+            <AutoSuggestBox x:Name="suchebox" IsEnabled="False" TextChanged="suchebox_TextChanged"  QuerySubmitted="suchebox_QuerySubmitted" SuggestionChosen="suchebox_SuggestionChosen"  Header="Suche:" QueryIcon="Find"   Width="200" RelativePanel.RightOf="Title" >
                 
             </AutoSuggestBox>
             <ComboBox   x:Name="combo" Header="Filter nach" PlaceholderText="Wähle eine Spalte aus" Width="200" SelectionChanged="combo_SelectionChanged"  Margin="10,0,10,0" RelativePanel.RightOf="suchebox">
                 <x:String>Nachname</x:String>
                 <x:String>Vorname</x:String>
-                <x:String>Matriklenummer</x:String>
+                <x:String>Matrikelnummer</x:String>
                 <x:String>Auisgeliehen um</x:String>
                 <x:String>Transpondernummer</x:String>
             </ComboBox>
 
-
+            <Button RelativePanel.RightOf="combo" x:Name="clear"  Margin="10,22,10,0" Content="Reset Filter" Click="clear_Click"></Button>
 
 
 
@@ -201,7 +201,7 @@
         </RelativePanel>
 
         
-        <controls:DataGrid RowStyle="{StaticResource DataGridRowStyle1}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle1}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"   RelativePanel.AlignRightWithPanel="True"   RelativePanel.Below="panel0"
+        <controls:DataGrid RowStyle="{StaticResource DataGridRowStyle1}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle1}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"      RelativePanel.Below="panel0"
     x:Name="MyDataGrid"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
