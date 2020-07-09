@@ -472,13 +472,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE948;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Transponder Liste" Tag="SamplePage3" >
-                    <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE71D;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" Tag="info" >
+                    <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Transponder Liste" Tag="transponder" >
+                        <NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE71D;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem  Style="{StaticResource NavigationViewItemStyle1}" Content="Info" Tag="impressum" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
                     </NavigationViewItem.Icon>

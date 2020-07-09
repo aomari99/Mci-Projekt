@@ -45,7 +45,7 @@ namespace Ausleihe_Prototyp
             anwendung.Text = args.SelectedItemContainer.Content.ToString();
             switch (page)
             {
-                case "info":
+                case "impressum":
                     contentFrame.Navigate(typeof(Impressum));
                     break;
                 case "ausleihe":
@@ -53,6 +53,9 @@ namespace Ausleihe_Prototyp
                     break;
                 case "ausgeliehene":
                     contentFrame.Navigate(typeof(Ausgeliehene_Transponder));
+                    break;
+                case "transponder":
+                    contentFrame.Navigate(typeof(Transponderliste));
                     break;
             }
         }

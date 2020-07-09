@@ -200,49 +200,32 @@
 
         </RelativePanel>
     
-        <controls:DataGrid RowStyle="{StaticResource DataGridRowStyle1}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle1}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"   RelativePanel.AlignRightWithPanel="True"   RelativePanel.Below="panel0"
+        <controls:DataGrid RelativePanel.Below="panel0"
     x:Name="MyDataGrid"
- 
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
     AlternatingRowBackground="Transparent"
     AlternatingRowForeground="Gray"
-                   
     AreRowDetailsFrozen="False"
     AreRowGroupHeadersFrozen="True"
     AutoGenerateColumns="False"
     CanUserReorderColumns="True"
     CanUserResizeColumns="True"
-    CanUserSortColumns="True"
-    
-
-    GridLinesVisibility="All"
-    HorizontalGridLinesBrush="Black"
-    VerticalGridLinesBrush="Black"
+    CanUserSortColumns="False"
+    ColumnHeaderHeight="32"
+    FrozenColumnCount="0"
+    GridLinesVisibility="None"
     HeadersVisibility="Column"
     HorizontalScrollBarVisibility="Visible"
-    IsReadOnly="True"
-    ItemsSource="{x:Bind collection}"
-           
+    IsReadOnly="False"
+    
+    MaxColumnWidth="400"
     RowDetailsVisibilityMode="Collapsed"
     RowGroupHeaderPropertyNameAlternative="Range"
     SelectionMode="Extended"
     VerticalScrollBarVisibility="Visible"
-    Sorting="MyDataGrid_Sorting" RequestedTheme="Light" FocusVisualSecondaryBrush="#99F3F3F3"   
     >
-         
-            <controls:DataGrid.Columns >
-                <controls:DataGridTextColumn Binding="{Binding Nachname}"  Tag="Nachname" Header="Nachname" />
-                <controls:DataGridTextColumn Binding="{Binding Vorname}" Tag="Vorname" Header="Vorname" />
-                <controls:DataGridTextColumn Binding="{Binding Matrikelnummer}" Tag="Matrikelnummer" Header="Matrikelnummer" />
-                <controls:DataGridTextColumn Binding="{Binding Transpondernummer}" Tag="Transpondernummer" Header="Transpondernummer" />
-                <controls:DataGridTextColumn Binding="{Binding Ausgeliehenam}" Tag="Ausgeliehenum" Header="Ausgeliehen um" />
-                <controls:DataGridTemplateColumn x:Name="test" Tag="option" Header="Option">
-                <controls:DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate>
-                            <Button Click="Button_Click" Content="Abgegeben" Tag="{Binding Matrikelnummer}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                    </DataTemplate>
-                </controls:DataGridTemplateColumn.CellTemplate>
-            </controls:DataGridTemplateColumn>
-            </controls:DataGrid.Columns>
+          
         </controls:DataGrid>
     </RelativePanel>
 </Page>
