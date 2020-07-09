@@ -21,9 +21,9 @@
 
         <Button x:Name="button_hinzu" Content="Hinzufügen" Height="49" Margin="324,715,0,0" VerticalAlignment="Top" Width="281" FontSize="24" FontWeight="Bold" FontStyle="Normal" Background="#33090909" BorderThickness="2,2,2,2" BorderBrush="#FF2B2B2B" Click="button_hinzu_Click"/>
         <TextBlock x:Name="box_ueberschrift" HorizontalAlignment="Left" Height="62" Margin="0,29,0,0" Text="Neue Ausleihe hinzufügen" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" Foreground="White" FontSize="36" FontWeight="Bold" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" ManipulationMode="None"/>
-        <TextBox HorizontalAlignment="Left" Height="39" Margin="113,245,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="56" Margin="113,284,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="39" Margin="113,455,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="39" Margin="113,245,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}" IsReadOnly="True" SelectionHighlightColor="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" AllowFocusOnInteraction="False"/>
+        <TextBox HorizontalAlignment="Left" Height="56" Margin="113,284,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}" IsReadOnly="True" FocusVisualSecondaryBrush="{x:Null}" SelectionHighlightColor="{x:Null}" AllowFocusOnInteraction="False"/>
+        <TextBox HorizontalAlignment="Left" Height="39" Margin="113,455,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderThickness="1,0,0,1" Background="{x:Null}" IsReadOnly="True" SelectionHighlightColor="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" IsTapEnabled="False" AllowFocusOnInteraction="False" ManipulationMode="None"/>
         
         
 
