@@ -182,10 +182,10 @@
             <TextBlock x:Name="Title" RelativePanel.AlignTopWithPanel="True" Margin="20" Style="{ThemeResource SubtitleTextBlockStyle}" Text="Liste der Ausgeliehene Transponder:"  RelativePanel.AlignLeftWithPanel="True"/>
             
             
-            <AutoSuggestBox x:Name="suchebox" Header="Suche:" QueryIcon="Find"   Width="200" RelativePanel.RightOf="Title" >
+            <AutoSuggestBox x:Name="suchebox" TextChanged="suchebox_TextChanged"  QuerySubmitted="suchebox_QuerySubmitted" SuggestionChosen="suchebox_SuggestionChosen"  Header="Suche:" QueryIcon="Find"   Width="200" RelativePanel.RightOf="Title" >
                 
             </AutoSuggestBox>
-            <ComboBox   x:Name="combo" Header="Filter nach" PlaceholderText="Wähle eine Spalte aus" Width="200"  Margin="10,0,10,0" RelativePanel.RightOf="suchebox">
+            <ComboBox   x:Name="combo" Header="Filter nach" PlaceholderText="Wähle eine Spalte aus" Width="200" SelectionChanged="combo_SelectionChanged"  Margin="10,0,10,0" RelativePanel.RightOf="suchebox">
                 <x:String>Nachname</x:String>
                 <x:String>Vorname</x:String>
                 <x:String>Matriklenummer</x:String>
@@ -199,33 +199,59 @@
 
 
         </RelativePanel>
-    
-        <controls:DataGrid RelativePanel.Below="panel0"
+
+        
+        <controls:DataGrid RowStyle="{StaticResource DataGridRowStyle1}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle1}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"   RelativePanel.AlignRightWithPanel="True"   RelativePanel.Below="panel0"
     x:Name="MyDataGrid"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
+ 
     AlternatingRowBackground="Transparent"
     AlternatingRowForeground="Gray"
+                   
     AreRowDetailsFrozen="False"
     AreRowGroupHeadersFrozen="True"
     AutoGenerateColumns="False"
     CanUserReorderColumns="True"
     CanUserResizeColumns="True"
-    CanUserSortColumns="False"
+   
     ColumnHeaderHeight="32"
     FrozenColumnCount="0"
-    GridLinesVisibility="None"
+     
+    CanUserSortColumns="True"
+    
+
+    GridLinesVisibility="All"
+    HorizontalGridLinesBrush="Black"
+    VerticalGridLinesBrush="Black"
     HeadersVisibility="Column"
     HorizontalScrollBarVisibility="Visible"
-    IsReadOnly="False"
+     
     
     MaxColumnWidth="400"
+    IsReadOnly="True"
+    ItemsSource="{x:Bind collection}"
+           
     RowDetailsVisibilityMode="Collapsed"
     RowGroupHeaderPropertyNameAlternative="Range"
     SelectionMode="Extended"
     VerticalScrollBarVisibility="Visible"
+    Sorting="MyDataGrid_Sorting" RequestedTheme="Light" FocusVisualSecondaryBrush="#99F3F3F3"   
     >
-          
+            <controls:DataGrid.Columns >
+                <controls:DataGridTextColumn Binding="{Binding Nachname}"  Tag="Nachname" Header="Nachname" />
+                <controls:DataGridTextColumn Binding="{Binding Vorname}" Tag="Vorname" Header="Vorname" />
+                <controls:DataGridTextColumn Binding="{Binding Matrikelnummer}" Tag="Matrikelnummer" Header="Matrikelnummer" />
+                <controls:DataGridTextColumn Binding="{Binding Transpondernummer}" Tag="Transpondernummer" Header="Transpondernummer" />
+                <controls:DataGridTextColumn Binding="{Binding Ausgeliehenam}" Tag="Ausgeliehenum" Header="Ausgeliehen um" />
+                <controls:DataGridTemplateColumn x:Name="test" Tag="option" Header="Option">
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Button_Click" Content="Abgegeben" Tag="{Binding Transpondernummer}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
+                </controls:DataGridTemplateColumn>
+            </controls:DataGrid.Columns>
         </controls:DataGrid>
     </RelativePanel>
 </Page>

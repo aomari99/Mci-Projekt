@@ -29,10 +29,13 @@ namespace Ausleihe_Prototyp
     public sealed partial class Ausgeliehene_Transponder : Page
     {
 
-         
 
-         
 
+       
+
+        public ObservableCollection<string> suggestion = new ObservableCollection<string>();
+
+        public ObservableCollection<string> filtersuggestion = new ObservableCollection<string>();
 
         public ObservableCollection<data> collection = new ObservableCollection<data>();
         public Ausgeliehene_Transponder()
@@ -57,8 +60,8 @@ namespace Ausleihe_Prototyp
                     collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
                 }
             }
-
-          //  MyDataGrid.ItemsSource = collection;
+            suchebox.ItemsSource = filtersuggestion;
+            //  MyDataGrid.ItemsSource = collection;
             // FillDataGrid(dt, MyDataGrid);
         }
 
@@ -84,11 +87,11 @@ namespace Ausleihe_Prototyp
    
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string mtrnummer = ((Button)sender).Tag.ToString();
-            Debug.WriteLine(mtrnummer);
+            int trnummer = Int32.Parse(((Button)sender).Tag.ToString());
+            Debug.WriteLine(trnummer);
             foreach (var x in Datamanger.Ausleihen)
             {
-                if (x.abegegeben == false && x.Student.Matrikelnummer == mtrnummer)
+                if (x.abegegeben == false && x.Transponder.Transpondernummer == trnummer)
                 {
                     x.abegegeben = true;
                 }
@@ -104,6 +107,8 @@ namespace Ausleihe_Prototyp
                     collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
                 }
             }
+             
+            MyDataGrid.SelectedItem = null;
         }
         public string lasttag = "";
         private void MyDataGrid_Sorting(object sender, DataGridColumnEventArgs e)
@@ -218,6 +223,85 @@ namespace Ausleihe_Prototyp
                 }
             }
 
+        }
+
+        private void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            suggestion.Clear();
+            switch (combo.SelectedValue.ToString())
+            {
+                case "Nachname":
+                    foreach ( var x in collection)
+                    {
+                        suggestion.Add(x.Nachname);
+                    }
+                    break;
+
+                case "Vorname":
+                    foreach (var x in collection)
+                    {
+                        suggestion.Add(x.Vorname);
+                    }
+                    break;
+
+                case "Matrikelnummer":
+                    foreach (var x in collection)
+                    {
+                        suggestion.Add(x.Matrikelnummer);
+                    }
+                    break;
+
+
+                case "Transpondernummer":
+                    foreach (var x in collection)
+                    {
+                        suggestion.Add(x.Transpondernummer.ToString());
+                    }
+                    break;
+
+                case "Ausgeliehen um":
+                    foreach (var x in collection)
+                    {
+                        suggestion.Add(x.Ausgeliehenam);
+                    }
+                    break;
+            }
+            filtersuggestion.Clear();
+            foreach ( var x in suggestion)
+            {
+                filtersuggestion.Add(x);
+            }
+        }
+
+        private void suchebox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                filtersuggestion.Clear();
+                foreach (var x in suggestion)
+                {
+                    if(x.ToUpper().Contains(suchebox.Text.ToUpper()))
+                     filtersuggestion.Add(x);
+                }
+            }
+        }
+
+        private void suchebox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            if (args.ChosenSuggestion != null)
+            {
+                suchebox.Text = args.ChosenSuggestion.ToString();
+            }
+            else
+            {
+               
+            }
+           
+        }
+
+        private void suchebox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+          //  Debug.WriteLine("Hello world");
         }
     }
 }
