@@ -39,18 +39,18 @@ namespace Ausleihe_Prototyp
 
             Studenten = new List<Student> { student1,student2,student3,student4,student5,student6,student7,student8};
 
-            Ausleihe a1 = new Ausleihe(t1, student1, "01.07.2020");
-            Ausleihe a2 = new Ausleihe(t2, student2, "02.07.2020");
-            Ausleihe a3 = new Ausleihe(t3, student3, "03.07.2020");
-            Ausleihe a4 = new Ausleihe(t4, student4, "04.07.2020");
-            Ausleihe a5 = new Ausleihe(t5, student5, "05.07.2020");
-            Ausleihe a6 = new Ausleihe(t6, student5, "06.07.2020");
-            Ausleihe a7 = new Ausleihe(t7, student5, "07.07.2020");
-            Ausleihe a8 = new Ausleihe(t8, student6, "08.07.2020");
-            Ausleihe a9 = new Ausleihe(t9, student7, "09.07.2020");
-            Ausleihe a10 = new Ausleihe(t10, student8, "10.07.2020");
+            Ausleihe a1 = new Ausleihe(t1, student1, "12:33");
+            Ausleihe a2 = new Ausleihe(t2, student2, "12:44");
+            Ausleihe a3 = new Ausleihe(t3, student3, "13:03");
+            Ausleihe a4 = new Ausleihe(t4, student4, "14:06");
+            Ausleihe a5 = new Ausleihe(t5, student5, "14:40");
+            Ausleihe a6 = new Ausleihe(t6, student5, "15:00");
+            Ausleihe a7 = new Ausleihe(t7, student5, "15:10");
+            Ausleihe a8 = new Ausleihe(t8, student6, "15:20");
+            Ausleihe a9 = new Ausleihe(t9, student7, "11:11");
+            Ausleihe a10 = new Ausleihe(t10, student8, "12:22");
 
-            Ausleihen = new List<Ausleihe> { a2,a3,a5,a6,a7,a8,a9,a10};
+            Ausleihen = new List<Ausleihe> { a9, a10,a1, a2,a3,a5,a6,a7,a8};
             
         }
 
