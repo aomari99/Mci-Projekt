@@ -112,7 +112,7 @@ namespace Ausleihe_Prototyp
                         foreach (Transponder sT in studTrans) {
                             if (sT == aT) {
                                 foreach (Ausleihe aA in alleAusl) {
-                                    if (aA.Transponder == sT) {
+                                    if (aA.Transponder == sT && aA.abegegeben ==false) {
                                         i = 1;
                                         istausgeliehen = 1;
                                         break;

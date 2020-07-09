@@ -50,7 +50,7 @@ namespace Ausleihe_Prototyp
             Ausleihe a9 = new Ausleihe(t9, student7, "11:11");
             Ausleihe a10 = new Ausleihe(t10, student8, "12:22");
 
-            Ausleihen = new List<Ausleihe> { a9, a10,a1, a2,a3,a5,a6,a7,a8};
+            Ausleihen = new List<Ausleihe> { a9, a10 , a2,a3,a5,a6,a7,a8};
             
         }
 
