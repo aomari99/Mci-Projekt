@@ -39,24 +39,24 @@ namespace Ausleihe_Prototyp
 
             Studenten = new List<Student> { student1,student2,student3,student4,student5,student6,student7,student8};
 
-            Ausleihe a1 = new Ausleihe(t1, student1, "12:33");
-            Ausleihe a2 = new Ausleihe(t2, student2, "12:44");
-            Ausleihe a3 = new Ausleihe(t3, student3, "13:03");
-            Ausleihe a4 = new Ausleihe(t4, student4, "14:06");
-            Ausleihe a5 = new Ausleihe(t5, student5, "14:40");
-            Ausleihe a6 = new Ausleihe(t6, student5, "15:00");
-            Ausleihe a7 = new Ausleihe(t7, student5, "15:10");
-            Ausleihe a8 = new Ausleihe(t8, student6, "15:20");
-            Ausleihe a9 = new Ausleihe(t9, student7, "11:11");
-            Ausleihe a10 = new Ausleihe(t10, student8, "12:22");
+            Ausleihe a1 = new Ausleihe(t1, student1, "12:33",t1.Raumliste[0]);
+            Ausleihe a2 = new Ausleihe(t2, student2, "12:44", t2.Raumliste[0]);
+            Ausleihe a3 = new Ausleihe(t3, student3, "13:03", t3.Raumliste[0]);
+            Ausleihe a4 = new Ausleihe(t4, student4, "14:06", t4.Raumliste[0]);
+            Ausleihe a5 = new Ausleihe(t5, student5, "14:40", t5.Raumliste[0]);
+            Ausleihe a6 = new Ausleihe(t6, student5, "15:00", t6.Raumliste[2]);
+            Ausleihe a7 = new Ausleihe(t7, student5, "15:10", t7.Raumliste[2]);
+            Ausleihe a8 = new Ausleihe(t8, student6, "15:20", t8.Raumliste[2]);
+            Ausleihe a9 = new Ausleihe(t9, student7, "11:11", t9.Raumliste[1]);
+            Ausleihe a10 = new Ausleihe(t10, student8, "12:22", t10.Raumliste[2]);
 
             Ausleihen = new List<Ausleihe> { a9, a10 , a2,a3,a5,a6,a7,a8};
             
         }
 
-        public static void addAusleihe(Transponder _tr, Student student, string datum)
+        public static void addAusleihe(Transponder _tr, Student student, string datum, string _rn)
         {
-            Ausleihen.Add(new Ausleihe(_tr, student, datum)) ;
+            Ausleihen.Add(new Ausleihe(_tr, student, datum ,_rn)) ;
         }
 
    

@@ -25,12 +25,8 @@ namespace Ausleihe_Prototyp
     {
         public NeueAusleihe()
         {
-            try { this.InitializeComponent(); }
-            catch { // 
-                
-            }
-            
-            
+           this.InitializeComponent();  
+ 
             
         }
 
@@ -253,7 +249,7 @@ namespace Ausleihe_Prototyp
             if (result == ContentDialogResult.Primary)
             {
 
-                Datamanger.Ausleihen.Add(new Ausleihe(transkorrekt, studkorrekt, DateTime.Now.ToString("HH:mm")));
+                Datamanger.Ausleihen.Add(new Ausleihe(transkorrekt, studkorrekt, DateTime.Now.ToString("HH:mm") , box_raum.Text));
                 Frame.Navigate(typeof(NeueAusleihe));
             }
             else 

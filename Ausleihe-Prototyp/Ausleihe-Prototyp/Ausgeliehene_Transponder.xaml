@@ -238,12 +238,13 @@
     VerticalScrollBarVisibility="Visible"
     Sorting="MyDataGrid_Sorting" RequestedTheme="Light" FocusVisualSecondaryBrush="#99F3F3F3"   
     >
-            <controls:DataGrid.Columns >
-                <controls:DataGridTextColumn Binding="{Binding Nachname}"  Tag="Nachname" Header="Nachname" />
+            <controls:DataGrid.Columns    >
+                <controls:DataGridTextColumn   Binding="{Binding Nachname}"  Tag="Nachname" Header="Nachname" />
                 <controls:DataGridTextColumn Binding="{Binding Vorname}" Tag="Vorname" Header="Vorname" />
                 <controls:DataGridTextColumn Binding="{Binding Matrikelnummer}" Tag="Matrikelnummer" Header="Matrikelnummer" />
                 <controls:DataGridTextColumn Binding="{Binding Transpondernummer}" Tag="Transpondernummer" Header="Transpondernummer" />
                 <controls:DataGridTextColumn Binding="{Binding Ausgeliehenam}" Tag="Ausgeliehenum" Header="Ausgeliehen um" />
+                <controls:DataGridTextColumn Binding="{Binding Raumnummer}" Tag="Raumnummer" Header="Raumnummer" />
                 <controls:DataGridTemplateColumn x:Name="test" Tag="option" Header="Option">
                     <controls:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

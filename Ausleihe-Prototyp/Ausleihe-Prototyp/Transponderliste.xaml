@@ -178,7 +178,7 @@
         </RelativePanel>
 
         <controls:DataGrid    RelativePanel.Below="panel0"
-    x:Name="MyDataGrid"
+    x:Name="MyDataGridd"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
     AlternatingRowBackground="Transparent"

@@ -41,14 +41,15 @@ namespace Ausleihe_Prototyp
         public Transponder Transponder;
         public Student Student;
         public string Ausgeliehenam;
+        public string Raumnummer;
         public bool abegegeben = false;
 
-        public Ausleihe(Transponder _tr ,Student student , string datum)
+        public Ausleihe(Transponder _tr ,Student student , string datum , string rnumer)
         {
             Transponder = _tr;
             Student = student;
             Ausgeliehenam = datum;
-
+            Raumnummer = rnumer;
 
         }
     }

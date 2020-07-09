@@ -31,7 +31,7 @@ namespace Ausleihe_Prototyp
 
             DataTable dt = GetDataTable();
 
-            FillDataGrid(dt, MyDataGrid);
+            FillDataGrid(dt, MyDataGridd);
         }
 
         private static DataTable GetDataTable()

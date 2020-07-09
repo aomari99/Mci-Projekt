@@ -57,7 +57,7 @@ namespace Ausleihe_Prototyp
 
 
 
-                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
+                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam , x.Raumnummer));
                 }
             }
             suchebox.ItemsSource = filtersuggestion;
@@ -75,9 +75,10 @@ namespace Ausleihe_Prototyp
             public int Transpondernummer { get; set; }
             public string Ausgeliehenam { get; set; }
 
-            public data(string a, string b , string c , int d , string e)
+            public string Raumnummer { get; set; }
+            public data(string a, string b , string c , int d , string e ,string f)
             {
-                Vorname = a; Nachname = b; Matrikelnummer = c; Transpondernummer = d; Ausgeliehenam = e;
+                Vorname = a; Nachname = b; Matrikelnummer = c; Transpondernummer = d; Ausgeliehenam = e; Raumnummer = f;
 
             }
             }
@@ -104,7 +105,7 @@ namespace Ausleihe_Prototyp
 
                   
 
-                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
+                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam , x.Raumnummer));
                 }
             }
              
@@ -222,6 +223,24 @@ namespace Ausleihe_Prototyp
                     e.Column.SortDirection = DataGridSortDirection.Descending;
                 }
             }
+            else if (e.Column.Tag.ToString() == "Raumnummer")
+            {
+                //Implement sort on the column "Range" using LINQ
+                if (e.Column.SortDirection == null || e.Column.SortDirection == DataGridSortDirection.Descending)
+                {
+                    MyDataGrid.ItemsSource = new ObservableCollection<data>(from item in collection
+                                                                            orderby item.Raumnummer ascending
+                                                                            select item);
+                    e.Column.SortDirection = DataGridSortDirection.Ascending;
+                }
+                else
+                {
+                    MyDataGrid.ItemsSource = new ObservableCollection<data>(from item in collection
+                                                                            orderby item.Raumnummer descending
+                                                                            select item);
+                    e.Column.SortDirection = DataGridSortDirection.Descending;
+                }
+            }
 
         }
 
@@ -310,21 +329,21 @@ namespace Ausleihe_Prototyp
                             case "Nachname":
                                 if (y.Student.Nachname == suchebox.Text)
                                 {
-                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam,y.Raumnummer));
                                 }
                                 break;
 
                             case "Vorname":
                                 if (y.Student.Vorname == suchebox.Text)
                                 {
-                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam, y.Raumnummer));
                                 }
                                 break;
 
                             case "Matrikelnummer":
                                 if (y.Student.Matrikelnummer == suchebox.Text)
                                 {
-                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam, y.Raumnummer));
                                 }
                                 break;
 
@@ -332,14 +351,14 @@ namespace Ausleihe_Prototyp
                             case "Transpondernummer":
                                 if (y.Transponder.Transpondernummer.ToString() == suchebox.Text)
                                 {
-                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam, y.Raumnummer));
                                 }
                                 break;
 
                             case "Ausgeliehen um":
                                 if (y.Ausgeliehenam == suchebox.Text)
                                 {
-                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam));
+                                    collection.Add(new data(y.Student.Vorname, y.Student.Nachname, y.Student.Matrikelnummer, y.Transponder.Transpondernummer, y.Ausgeliehenam, y.Raumnummer));
                                 }
                                 break;
                         }
@@ -372,7 +391,7 @@ namespace Ausleihe_Prototyp
 
 
 
-                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam));
+                    collection.Add(new data(x.Student.Vorname, x.Student.Nachname, x.Student.Matrikelnummer, x.Transponder.Transpondernummer, x.Ausgeliehenam, x.Raumnummer));
                 }
             }
 

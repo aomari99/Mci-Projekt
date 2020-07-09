@@ -10,9 +10,9 @@
     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
         <Rectangle x:Name="rect_2"  Height="100" Stroke="#98989C" StrokeThickness="5"  RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignTopWithPanel="True" Fill="#FF39428C"/>
+    <Rectangle x:Name="rect_1" Stroke="#98989C" StrokeThickness="5" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="rect_2"  Fill="#FFDFE2EB"  />
         <TextBlock x:Name="box_ueberschrift"  Height="60" Margin="0,25,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Neue Ausleihe hinzufügen" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" Foreground="White" FontSize="36" FontWeight="Bold" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" ManipulationMode="None"   AllowFocusOnInteraction="False"  />
-        <Rectangle x:Name="rect_1" Stroke="#98989C" StrokeThickness="5" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="rect_2"  Fill="#FFDFE2EB"  />
-        
+
         <TextBox x:Name="box_matrikelnummer" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="rect_2" Margin="0,50,0,0"  Height="50"   Text="" PlaceholderText="Matrikelnummer" TextWrapping="Wrap" Width="600" TextChanged="TextBox_TextChanged" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" BorderBrush="Black" LostFocus="matrikelnummer_eingetragen" />
         <TextBlock x:Name="block_matrikelnummer" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="box_matrikelnummer" Margin="0,0,0,0" Height="25"   Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" Foreground="#FF960909"/>
         <TextBox x:Name="box_vorname" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.Below="block_matrikelnummer" Margin="0,0,-10,0" Height="50"   Text="" PlaceholderText="Vorname (automatisch ausgefüllt)" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" Foreground="Black" Background="White" PlaceholderForeground="#FF9F9F9F" FontSize="24" IsReadOnly="True" BorderBrush="Black" IsTabStop="False" />
