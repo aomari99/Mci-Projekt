@@ -15,8 +15,8 @@
             <AppBarButton x:Name="Filter" RelativePanel.RightOf="Title" Margin="0,10,0,10"  Icon="Filter" Label="Filter">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem x:Name="rankLow" Text="Ausgeliehen am aufsteigend" />
-                        <MenuFlyoutItem x:Name="rankHigh" Text="Ausgeliehen am absteigend" />
+                        <MenuFlyoutItem x:Name="rankLow" Text="Transponder-Nr aufsteigend" />
+                        <MenuFlyoutItem x:Name="rankHigh" Text="Transponder-Nr absteigend" />
                         <MenuFlyoutSeparator />
                         <MenuFlyoutItem x:Name="heightLow" Text="Name  A-Z" />
                         <MenuFlyoutItem x:Name="heightHigh" Text="Name  Z-A" />
