@@ -84,25 +84,6 @@ namespace Ausleihe_Prototyp
             {
 
 
-                int raumgibtes = 0;
-                // Gehe alle Transponder durch und gucke, ob es den Raum gibt
-                List<Transponder> alleT = Datamanger.Transponders;
-                foreach (Transponder allt in alleT) {
-                    List<String> alleR = allt.Raumliste;
-                    foreach (String allr in alleR) {
-                        if (allr == box_raum.Text) {
-                            raumgibtes = 1;
-                            break;
-                        }
-                        
-                    }
-                    if (raumgibtes == 1) {
-                        break;
-                    }
-                }
-
-
-
                 List<String> raumi = new List<string>();
                 List<Ausleihe> ausli = Datamanger.Ausleihen;
                 string mnummer = box_matrikelnummer.Text;
@@ -120,40 +101,108 @@ namespace Ausleihe_Prototyp
                 }
 
                 int i = 0;
+                int istausgeliehen = 0;
+                string raumnmmer = box_raum.Text;
+                List<Transponder> alleTrans = Datamanger.Transponders;
+                List<Transponder> studTrans = studkorrekt.Berechtingungsliste;
+                List<Ausleihe> alleAusl = Datamanger.Ausleihen;
+                foreach (Transponder aT in alleTrans) {
+                    i = 0;
+                    if (aT.Raumliste.Contains(raumnmmer)) {
+                        foreach (Transponder sT in studTrans) {
+                            if (sT == aT) {
+                                foreach (Ausleihe aA in alleAusl) {
+                                    if (aA.Transponder == sT) {
+                                        i = 1;
+                                        istausgeliehen = 1;
+                                        break;
+                                    }
+                                }
+                                if (i == 1)
+                                {
+                                    break;
+                                }
+                                block_raum.Text = "";
+                                box_transponder.Text = sT.Transpondernummer.ToString();
+                                transkorrekt = sT;
+                                i = 2;
+                                break;
+                            }
+                            
+
+                        }
+                        if (i != 1)
+                        {
+                            break;
+                        }
+
+                    }
+                    if (i != 1) {
+                        i = 3;
+                    }
+                    
+                    
+                    
+
+                }
+                if (istausgeliehen == 1)
+                {
+                    box_transponder.Text = "";
+                    block_raum.Text = "Es gibt keinen freien Transponder für diesen Raum!";
+                }
+                else if (i == 0)
+                {
+                    box_transponder.Text = "";
+                    block_raum.Text = "Der Nutzer besitzt keine Berechtigung für diesen Raum!";
+                }
+                else if (i == 3) {
+                    box_transponder.Text = "";
+                    block_raum.Text = "Diesen Raum gibt es im System nicht!";
+                }
+
+
+                /*
                 foreach (Transponder t in studitransis)
                 {
                     raumi = t.Raumliste;
                     i = 0;
-                    foreach (Ausleihe a in ausli) {
-                      if (a.Transponder == t) {
-                         i = 1;
-                         break;
-                      }
-                    }
-                     if(i == 1){ break; } else {
-                     
-                     
-                        foreach (String r in raumi)
+                    if (raumi.Contains(box_raum.Text))
+                    {
+                        foreach (Ausleihe a in ausli)
                         {
-                            if (box_raum.Text == r)
+                            if (a.Transponder == t)
                             {
-                                box_transponder.Text = t.Transpondernummer.ToString();
-                                raumkorrekt = box_raum.Text;
-                                transkorrekt = t;
-                                block_raum.Text = "";
+                                i = 1;
                                 break;
                             }
-                            i = 2;
                         }
-                        // Wenn Raum gefunden wurde, breche ab
+                        if (i == 1) { break; }
+                        else
+                        {
 
-                        if (box_raum.Text == raumkorrekt) {
-                            break;
+
+                            foreach (String r in raumi)
+                            {
+                                if (box_raum.Text == r)
+                                {
+                                    box_transponder.Text = t.Transpondernummer.ToString();
+                                    raumkorrekt = box_raum.Text;
+                                    transkorrekt = t;
+                                    block_raum.Text = "";
+                                    break;
+                                }
+                            }
+                            // Wenn Raum gefunden wurde, breche ab
+
+                            if (box_raum.Text == raumkorrekt)
+                            {
+                                break;
+                            }
+
                         }
 
-                      }
+                    }
                 }
-
 
 
                 if (box_raum.Text != raumkorrekt && i == 1)
@@ -161,13 +210,13 @@ namespace Ausleihe_Prototyp
                     block_raum.Text = "Es gibt keine freien Transponder für diesen Raum!";
                     box_transponder.Text = "";
                 } 
-                else if (box_raum.Text != raumkorrekt && i == 2)
+                else
                 {
                     box_transponder.Text = "";
                     block_raum.Text = "Dieser Nutzer besitzt keine Berechtigung auf diesen Raum!";
                 }
                     
-                        
+                        */
              
                 
 
