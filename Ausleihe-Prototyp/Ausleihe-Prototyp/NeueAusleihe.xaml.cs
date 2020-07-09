@@ -29,12 +29,13 @@ namespace Ausleihe_Prototyp
             catch { // 
                 
             }
-
+            
             
             
         }
 
-        // string unterschrift;
+        Transponder transkorrekt;
+        Student studkorrekt;
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -47,30 +48,81 @@ namespace Ausleihe_Prototyp
 
             if (box_matrikelnummer.Text != "")
             {
-                box_vorname.Text = "Max";
-                box_name.Text = "Moschi";
+                List<Student> studi1 = Datamanger.Studenten;
+                string mnummer = box_matrikelnummer.Text;
+                string mnummerkorrekt = "";
+                foreach (Student s in studi1)
+                {
+                    if (s.Matrikelnummer == mnummer)
+                    {
+                        block_matrikelnummer.Text = "";
+                        mnummerkorrekt = mnummer;
+                        box_vorname.Text = s.Vorname;
+                        box_name.Text = s.Nachname;
+                        break;
+                    }
+                }
+                if (box_matrikelnummer.Text != mnummerkorrekt)
+                {
+                    box_vorname.Text = "";
+                    box_name.Text = "";
+                    block_matrikelnummer.Text = "Dieser Nutzer ist nicht im System vorhanden!";
+                }
+            }
+            else {
+                box_vorname.Text = "";
+                box_name.Text = "";
+                block_matrikelnummer.Text = "";
             }
 
-            // Wenn Matrikelnummer im System
-            
-            // Anzeigen von vorname und name in box_varname und box_name
-            // Ansonsten gib Text in Rot aus und rotes ausrufezeichen daneben
         }
 
         private void raum_eingetragen(UIElement sender, LosingFocusEventArgs args)
         {
-            /*
-             student studi1 = where student.matrikelnummer = matrikelnummer
-            
-             
-            Wenn keine Berechtigung auf Raum ist, gib Text in Rot aus und rotes ausrufezeichen daneben
-            
-            get Transponder where Raum=raumnummer
-            // Anzeigen von passendem Transponder in box_transponder
-            */
+
             if (box_raum.Text != "")
             {
-                box_transponder.Text = "2";
+                List<String> raumi = new List<string>();
+                string mnummer = box_matrikelnummer.Text;
+                string raumkorrekt = "";
+                List<Student> studi1 = Datamanger.Studenten;
+                List<Transponder> studitransis = new List<Transponder>();
+                foreach (Student s in studi1)
+                {
+                    if (s.Matrikelnummer == mnummer)
+                    {
+                        studitransis = s.Berechtingungsliste;
+                        studkorrekt = s;
+                        break;
+                    }
+                }
+                foreach (Transponder t in studitransis)
+                {
+                    raumi = t.Raumliste;
+
+                    foreach (String r in raumi)
+                    {
+                        if (box_raum.Text == r)
+                        {
+                            box_transponder.Text = t.Transpondernummer.ToString();
+                            raumkorrekt = box_raum.Text;
+                            transkorrekt = t;
+                            block_raum.Text = "";
+                        }
+                    }
+
+                }
+                if (box_raum.Text != raumkorrekt)
+                {
+                    box_transponder.Text = "";
+                    block_raum.Text = "Dieser Nutzer besitzt keine Berechtigung auf diesen Raum!";
+                }
+
+
+            }
+            else {
+                box_transponder.Text = "";
+                block_raum.Text = "";
             }
             
             
@@ -98,8 +150,8 @@ namespace Ausleihe_Prototyp
 
             if (result == ContentDialogResult.Primary)
             {
-                
-                // Speichere Daten
+
+                Datamanger.Ausleihen.Add(new Ausleihe(transkorrekt, studkorrekt, DateTime.Now.ToString("HH:mm")));
                 Frame.Navigate(typeof(NeueAusleihe));
             }
             else 
@@ -131,6 +183,7 @@ namespace Ausleihe_Prototyp
                 box_matrikelnummer.PlaceholderForeground = GetSolidColorBrush("FF960909");
                 box_matrikelnummer.PlaceholderText = "Bitte geben Sie eine Matrikelnummer ein";
             }
+
             
             if (box_raum.Text == "")
             {
@@ -144,7 +197,7 @@ namespace Ausleihe_Prototyp
                 box_unterschrift.PlaceholderText = "Bitte hinterlegen Sie eine Unterschrift";
             }
 
-            if (box_raum.Text != "" && box_matrikelnummer.Text != "" && box_unterschrift.Text != "") {
+            if (box_raum.Text != "" && box_matrikelnummer.Text != "" && box_unterschrift.Text != "" && box_transponder.Text != "" && box_name.Text != "") {
                 DisplayLocationPromptDialog();
             }
         }
