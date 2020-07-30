@@ -193,7 +193,7 @@
                 <x:String>Transpondernummer</x:String>
             </ComboBox>
 
-            <Button RelativePanel.RightOf="combo" x:Name="clear"  Margin="10,22,10,0" Content="Reset Filter" Click="clear_Click"></Button>
+            <Button RelativePanel.RightOf="combo" x:Name="clear" Width="150"  Margin="10,22,10,0" Content="Filter Entfernen" Click="clear_Click"></Button>
 
 
 

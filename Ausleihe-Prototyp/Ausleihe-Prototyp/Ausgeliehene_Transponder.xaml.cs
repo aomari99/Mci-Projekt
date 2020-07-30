@@ -250,7 +250,9 @@ namespace Ausleihe_Prototyp
             if (combo.SelectedIndex != -1)
             {
                 suggestion.Clear();
+                
                 suchebox.IsEnabled = true;
+                suchebox.Text = "";
                 switch (combo.SelectedValue.ToString())
                 {
                     case "Nachname":
@@ -366,7 +368,7 @@ namespace Ausleihe_Prototyp
                       
                     }
                 }
-
+                MyDataGrid.ItemsSource = collection;
                 MyDataGrid.SelectedItem = null;
             }
            

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -243,13 +244,26 @@ namespace Ausleihe_Prototyp
 
             };
 
-           
+            ContentDialog erfolg = new ContentDialog
+            {
+                Title = "Info",
+                Content = "Ausleihe erfolgreich hinzugefügt!",
+                
+                PrimaryButtonText = "OK",
+                Background = GetSolidColorBrush("#FF39428C")
+
+
+
+
+            };
+
             var result = await locationPromptDialog.ShowAsync();
 
             if (result == ContentDialogResult.Primary)
             {
 
                 Datamanger.Ausleihen.Add(new Ausleihe(transkorrekt, studkorrekt, DateTime.Now.ToString("HH:mm") , box_raum.Text));
+                erfolg.ShowAsync();
                 Frame.Navigate(typeof(NeueAusleihe));
             }
             else 
@@ -297,6 +311,15 @@ namespace Ausleihe_Prototyp
 
             if (box_raum.Text != "" && box_matrikelnummer.Text != "" && box_unterschrift.Text != "" && box_transponder.Text != "" && box_name.Text != "") {
                 DisplayLocationPromptDialog();
+            }
+        }
+
+        private void box_matrikelnummer_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                Debug.WriteLine("enter mtr");
+                box_raum.Focus(FocusState.Keyboard);
             }
         }
     }
