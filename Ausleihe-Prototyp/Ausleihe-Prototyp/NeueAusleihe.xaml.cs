@@ -256,6 +256,18 @@ namespace Ausleihe_Prototyp
 
 
             };
+            ContentDialog abbruch = new ContentDialog
+            {
+                Title = "Info",
+                Content = "Ausleihe abgebrochen!",
+
+                PrimaryButtonText = "OK",
+                Background = GetSolidColorBrush("#FF39428C")
+
+
+
+
+            };
 
             var result = await locationPromptDialog.ShowAsync();
 
@@ -268,6 +280,7 @@ namespace Ausleihe_Prototyp
             }
             else 
             {
+                abbruch.ShowAsync();
                 Frame.Navigate(typeof(NeueAusleihe));
             }
   
