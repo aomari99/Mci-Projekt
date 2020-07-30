@@ -237,8 +237,9 @@ namespace Ausleihe_Prototyp
                 Content = "Kontrollieren Sie bitte, ob die Person auf dem Ausweis auch die Person ist, die den Transponder ausleiht!",
                 CloseButtonText = "Nein, das ist nicht die Person",
                 PrimaryButtonText = "Ja, das ist die Person",
-                Background = GetSolidColorBrush("#FF39428C")
-              
+                Background = GetSolidColorBrush("#FF39428C"),
+                Foreground = new SolidColorBrush(Colors.White)
+
 
 
 
@@ -250,7 +251,8 @@ namespace Ausleihe_Prototyp
                 Content = "Ausleihe erfolgreich hinzugefügt!",
                 
                 PrimaryButtonText = "OK",
-                Background = GetSolidColorBrush("#FF39428C")
+                Background = GetSolidColorBrush("#FF39428C"),
+                Foreground = new SolidColorBrush(Colors.White)
 
 
 
@@ -262,8 +264,9 @@ namespace Ausleihe_Prototyp
                 Content = "Ausleihe abgebrochen!",
 
                 PrimaryButtonText = "OK",
-                Background = GetSolidColorBrush("#FF39428C")
-
+                Background = GetSolidColorBrush("#FF39428C"),
+                Foreground = new SolidColorBrush( Colors.White)
+                
 
 
 
