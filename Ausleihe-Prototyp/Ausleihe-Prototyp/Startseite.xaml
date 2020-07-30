@@ -542,7 +542,7 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausleihe" Tag="ausleihe" >
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle1}"  Content="Ausleihe hinzufügen" Tag="ausleihe" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE948;"/>
                     </NavigationViewItem.Icon>
