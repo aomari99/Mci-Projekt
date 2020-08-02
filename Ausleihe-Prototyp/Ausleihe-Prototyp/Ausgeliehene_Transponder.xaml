@@ -245,10 +245,10 @@
                 <controls:DataGridTextColumn Binding="{Binding Transpondernummer}" Tag="Transpondernummer" Header="Transpondernummer" />
                 <controls:DataGridTextColumn Binding="{Binding Ausgeliehenam}" Tag="Ausgeliehenum" Header="Ausgeliehen um" />
                 <controls:DataGridTextColumn Binding="{Binding Raumnummer}" Tag="Raumnummer" Header="Raumnummer" />
-                <controls:DataGridTemplateColumn x:Name="test" Tag="option" Header="Option">
+                <controls:DataGridTemplateColumn x:Name="test" Tag="option" Header="Rückgabe">
                     <controls:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="Button_Click" Content="Abgegeben" Tag="{Binding Transpondernummer}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <Button Click="Button_Click" Content="Abgeben" Tag="{Binding Transpondernummer}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                         </DataTemplate>
                     </controls:DataGridTemplateColumn.CellTemplate>
                 </controls:DataGridTemplateColumn>

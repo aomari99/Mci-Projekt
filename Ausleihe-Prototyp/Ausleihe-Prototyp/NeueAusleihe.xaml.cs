@@ -80,8 +80,8 @@ namespace Ausleihe_Prototyp
             if (box_raum.Text != "")
             {
                 
-                 //if (box_matrikelnummer.Text != "")
-                //{
+                 if (box_matrikelnummer.Text != "")
+                {
                     /* Hier ALLES andere einfügen. Das folgende soll das Ende dieser Funktion bilden! */
                  
                 
@@ -228,18 +228,21 @@ namespace Ausleihe_Prototyp
 
             }
             else {
-                box_transponder.Text = "";
-                block_raum.Text = "";
+                box_matrikelnummer.PlaceholderForeground = GetSolidColorBrush("FF960909");
+                box_matrikelnummer.PlaceholderText = "Bitte geben Sie zuerst eine Matrikelnummer ein";
+                Debug.WriteLine("else wird ausgefuehrt");
+
+                    
             }
 
 
 
-            //}
-            //else
-            //{
-            //    box_matrikelnummer.PlaceholderForeground = GetSolidColorBrush("FF960909");
-            //    box_matrikelnummer.PlaceholderText = "Bitte geben Sie zuerst eine Matrikelnummer ein";
-            //}
+            }
+            else
+            {
+                box_transponder.Text = "";
+                block_raum.Text = "";
+            }
         }
 
        
