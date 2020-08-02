@@ -40,7 +40,7 @@ namespace Ausleihe_Prototyp
         }
 
 
-        private void matrikelnummer_eingetragen(object sender, RoutedEventArgs e)
+        private void matrikelnummer_eingetragen(UIElement sender, LosingFocusEventArgs args)
         {
 
             if (box_matrikelnummer.Text != "")
@@ -354,10 +354,7 @@ namespace Ausleihe_Prototyp
             }
         }
 
-        private void matrikelnummer_eingetragen(UIElement sender, LosingFocusEventArgs args)
-        {
-
-        }
+        
 
         private void box_vorname_TextChanged(object sender, TextChangedEventArgs e)
         {
