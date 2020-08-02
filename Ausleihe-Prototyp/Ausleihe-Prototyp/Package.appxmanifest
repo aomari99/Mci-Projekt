@@ -8,8 +8,8 @@
 
   <Identity
     Name="56c9bee7-0b37-4607-8362-8e2573cc82c8"
-    Publisher="CN=adamo"
-    Version="1.2.6.0" />
+    Publisher="CN=Max"
+    Version="1.2.8.0" />
 
   <mp:PhoneIdentity PhoneProductId="56c9bee7-0b37-4607-8362-8e2573cc82c8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
