@@ -79,6 +79,14 @@ namespace Ausleihe_Prototyp
 
             if (box_raum.Text != "")
             {
+                
+                if (box_matrikelnummer.Text != "")
+                {
+                    /* Hier ALLES andere einfügen. Das folgende soll das Ende dieser Funktion bilden! */
+                 
+                
+                
+                
 
 
                 List<String> raumi = new List<string>();
@@ -223,8 +231,15 @@ namespace Ausleihe_Prototyp
                 box_transponder.Text = "";
                 block_raum.Text = "";
             }
-            
-            
+
+
+
+            }
+            else
+            {
+                box_matrikelnummer.PlaceholderForeground = GetSolidColorBrush("FF960909");
+                box_matrikelnummer.PlaceholderText = "Bitte geben Sie zuerst eine Matrikelnummer ein";
+            }
         }
 
        
@@ -337,6 +352,16 @@ namespace Ausleihe_Prototyp
                 Debug.WriteLine("enter mtr");
                 box_raum.Focus(FocusState.Keyboard);
             }
+        }
+
+        private void matrikelnummer_eingetragen(UIElement sender, LosingFocusEventArgs args)
+        {
+
+        }
+
+        private void box_vorname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

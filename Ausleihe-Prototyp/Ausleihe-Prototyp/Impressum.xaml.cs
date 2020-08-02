@@ -27,5 +27,10 @@ namespace Ausleihe_Prototyp
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_Kontakt_header_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

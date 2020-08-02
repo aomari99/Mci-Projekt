@@ -182,10 +182,10 @@
             <TextBlock x:Name="Title" RelativePanel.AlignTopWithPanel="True" Margin="20" Style="{ThemeResource SubtitleTextBlockStyle}" Text="Liste der Ausgeliehene Transponder:"  RelativePanel.AlignLeftWithPanel="True"/>
             
             
-            <AutoSuggestBox x:Name="suchebox" IsEnabled="False" TextChanged="suchebox_TextChanged"  QuerySubmitted="suchebox_QuerySubmitted" SuggestionChosen="suchebox_SuggestionChosen"  Header="Suche:" QueryIcon="Find"   Width="200" RelativePanel.RightOf="Title" >
+            <AutoSuggestBox x:Name="suchebox" IsEnabled="False" TextChanged="suchebox_TextChanged"  QuerySubmitted="suchebox_QuerySubmitted" SuggestionChosen="suchebox_SuggestionChosen" Header="Suche:" QueryIcon="Find"  Width="300" RelativePanel.RightOf="clear" HorizontalAlignment="Stretch" Margin="10,0,10,0" Padding="0,0,-1,0" >
                 
             </AutoSuggestBox>
-            <ComboBox   x:Name="combo" Header="Filter nach" PlaceholderText="" Width="200" SelectionChanged="combo_SelectionChanged"  Margin="10,0,10,0" RelativePanel.RightOf="suchebox">
+            <ComboBox   x:Name="combo" Header="Filter nach" PlaceholderText="" Width="200" SelectionChanged="combo_SelectionChanged"  Margin="10,0,10,0" RelativePanel.RightOf="Title">
                 <x:String>Nachname</x:String>
                 <x:String>Vorname</x:String>
                 <x:String>Matrikelnummer</x:String>

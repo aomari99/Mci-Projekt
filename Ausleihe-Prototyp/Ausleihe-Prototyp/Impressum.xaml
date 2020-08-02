@@ -9,14 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <RelativePanel RequestedTheme="Light" Background="White" Height="auto" Width="auto" >
         <StackPanel Margin="80">
-            <TextBlock x:Name="textBlock_anschrift_header" HorizontalAlignment="Left"  Text="&gt;&gt;Anschrift" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="498" FontSize="48" FontWeight="Bold"/>
+            <TextBlock x:Name="textBlock_anschrift_header" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="498" FontSize="48" FontWeight="Bold" Text="Anschrift" TextDecorations="Underline"/>
             <TextBlock x:Name="textBlock_anschrift"   TextWrapping="Wrap"   FontSize="24" FontStyle="Normal"><Run Text="Beste Firma der Welt GmbH"/><LineBreak/><Run Text="Musterstrasse 1"/><LineBreak/><Run Text="69420 Geilostadt"/><LineBreak/><Run Text="Schlaaand"/><LineBreak/><Run/></TextBlock>
 
         </StackPanel>
 
 
         <StackPanel RelativePanel.AlignBottomWithPanel="True" Margin="80,0,0,80">
-            <TextBlock x:Name="textBlock_Kontakt_header"  Text="&gt;&gt;Kontakt" TextWrapping="Wrap"  Height="57" Width="498" FontSize="48" FontWeight="Bold" Foreground="Black"/>
+            <TextBlock x:Name="textBlock_Kontakt_header" TextWrapping="Wrap"  Height="57" Width="498" FontSize="48" FontWeight="Bold" Foreground="Black" SelectionChanged="textBlock_Kontakt_header_SelectionChanged" Text="Kontakt" TextDecorations="Underline"/>
 
             <TextBlock x:Name="textBlock_kontakt"   TextWrapping="Wrap"  FontSize="24" FontStyle="Normal" Foreground="Black"><Run Text="E-Mail: administrator@th-koeln.de"/><LineBreak/><Run Text="Telefon: +49 111 12345678"/><LineBreak/><Run Text="Ansprechpartner in Raum 1.111:"/><LineBreak/><Run Text="verfügbar: Mo - Fr von 10:00 - 14:00 Uhr"/></TextBlock>
 
